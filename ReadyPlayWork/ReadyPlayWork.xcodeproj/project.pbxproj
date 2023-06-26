@@ -16,6 +16,7 @@
 		95B4EBE12A45310D00328C23 /* ReadyPlayWorkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B4EBE02A45310D00328C23 /* ReadyPlayWorkTests.swift */; };
 		95B4EBEB2A45310D00328C23 /* ReadyPlayWorkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B4EBEA2A45310D00328C23 /* ReadyPlayWorkUITests.swift */; };
 		95B4EBED2A45310D00328C23 /* ReadyPlayWorkUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B4EBEC2A45310D00328C23 /* ReadyPlayWorkUITestsLaunchTests.swift */; };
+		95F63DE92A499FC2003C78E2 /* BarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F63DE82A499FC2003C78E2 /* BarChartView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		95B4EBE62A45310D00328C23 /* ReadyPlayWorkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReadyPlayWorkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		95B4EBEA2A45310D00328C23 /* ReadyPlayWorkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadyPlayWorkUITests.swift; sourceTree = "<group>"; };
 		95B4EBEC2A45310D00328C23 /* ReadyPlayWorkUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadyPlayWorkUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		95F63DE82A499FC2003C78E2 /* BarChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				950714FE2A458ABC00AF913A /* LineChartView.swift */,
+				95F63DE82A499FC2003C78E2 /* BarChartView.swift */,
 			);
 			path = 1.Chart;
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 			files = (
 				950714FF2A458ABC00AF913A /* LineChartView.swift in Sources */,
 				95B4EBD12A45310C00328C23 /* ContentView.swift in Sources */,
+				95F63DE92A499FC2003C78E2 /* BarChartView.swift in Sources */,
 				95B4EBCF2A45310C00328C23 /* ReadyPlayWorkApp.swift in Sources */,
 				950714F82A45705A00AF913A /* MainViewModel.swift in Sources */,
 			);

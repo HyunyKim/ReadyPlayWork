@@ -14,15 +14,20 @@ struct ContentView: View {
         return self.viewModel.category
     }
     
+    @State private var path = [MainViewModel.SubList]()
+    
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $path){
             List(self.category, id: \.self) { section in
                 Section {
                     ForEach(section.list, id:\.self) { item in
-                        NavigationLink(value: item) {
-                            Label(item.title, systemImage: "xbox.logo")
+                        Button {
+                            path.append(item)
+                        } label: {
+                            Label(item.title, systemImage: "circle")
                                 .foregroundColor(.gray)
-                        }
+                        }.buttonStyle(.borderless)
+
                     }
                 } header: {
                     Text(section.rawValue)
@@ -31,7 +36,12 @@ struct ContentView: View {
             }
             .navigationTitle("Category")
             .navigationDestination(for: MainViewModel.SubList.self) { item in
-                LineChartView()
+                switch item {
+                case .LineChart:
+                    LineChartView()
+                default:
+                    BarChartView()
+                }
             }
         }
         
