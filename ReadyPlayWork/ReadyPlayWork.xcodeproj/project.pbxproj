@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		950714F82A45705A00AF913A /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950714F72A45705A00AF913A /* MainViewModel.swift */; };
 		950714FF2A458ABC00AF913A /* LineChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950714FE2A458ABC00AF913A /* LineChartView.swift */; };
+		954B82022A4AAFB200C1123E /* Study in Resources */ = {isa = PBXBuildFile; fileRef = 954B82012A4AAFB200C1123E /* Study */; };
 		95B4EBCF2A45310C00328C23 /* ReadyPlayWorkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B4EBCE2A45310C00328C23 /* ReadyPlayWorkApp.swift */; };
 		95B4EBD12A45310C00328C23 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B4EBD02A45310C00328C23 /* ContentView.swift */; };
 		95B4EBD32A45310D00328C23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95B4EBD22A45310D00328C23 /* Assets.xcassets */; };
@@ -39,6 +40,7 @@
 /* Begin PBXFileReference section */
 		950714F72A45705A00AF913A /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		950714FE2A458ABC00AF913A /* LineChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartView.swift; sourceTree = "<group>"; };
+		954B82012A4AAFB200C1123E /* Study */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Study; sourceTree = "<group>"; };
 		95B4EBCB2A45310C00328C23 /* ReadyPlayWork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReadyPlayWork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95B4EBCE2A45310C00328C23 /* ReadyPlayWorkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadyPlayWorkApp.swift; sourceTree = "<group>"; };
 		95B4EBD02A45310C00328C23 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 		95B4EBC22A45310C00328C23 = {
 			isa = PBXGroup;
 			children = (
+				954B82012A4AAFB200C1123E /* Study */,
 				95B4EBCD2A45310C00328C23 /* ReadyPlayWork */,
 				95B4EBDF2A45310D00328C23 /* ReadyPlayWorkTests */,
 				95B4EBE92A45310D00328C23 /* ReadyPlayWorkUITests */,
@@ -274,6 +277,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				954B82022A4AAFB200C1123E /* Study in Resources */,
 				95B4EBD72A45310D00328C23 /* Preview Assets.xcassets in Resources */,
 				95B4EBD32A45310D00328C23 /* Assets.xcassets in Resources */,
 			);
