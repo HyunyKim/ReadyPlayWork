@@ -10,21 +10,13 @@ AppStorage 와 SceneStorage는 비슷하지만
 
 #### https://developer.apple.com/documentation/swiftui/scenestorage
 
-You use SceneStorage when you need automatic state restoration of the value. SceneStorage works very similar to State, except its initial value is restored by the system if it was previously saved, and the value is shared with other SceneStorage variables in the same scene.
+1) Scene Storage에는 많은 데어터 / 중요 데이터 저장은 적절하지 않다. 상태복원용 데이터만 적합하다. 
+   또한 시스템은 데이터가 언제, 얼마나 자주 지속될 것인지에 대해서 보장하지 않는다. 
+   사용자가 앱 전환기를 사용하거나 앱을 종료 시키면 사라지게 된다. 
+2) Scene 이라는 개념에 대해서 일반적은 iPhone 어플에서는 잘 이해가 안될 수 있다. 
+   하나의 씬으로 이뤄진 경우가 많기 떄문이다. 
+   이 개념은 iPad / MacOS 에서 좀 더 이해하기 쉽디ㅏ. 
+   링크를 참조하자. 
+   https://crystalminds.medium.com/introducing-scenestorage-in-swiftui-5a4ec1a90ca3
+   
 
- 값의 자동 상태 복원이 필요한 경우 SceneStorage를 사용합니다. SceneStorage 는 State 와 매우 유사하게 작동합니다. 단, 이전에 저장한 경우 초기 값이 시스템에 의해 복원되고 이 값이 동일한 씬(scene)의 다른 SceneStorage 변수와 공유된다는 점이 다릅니다.
- 
- The system manages the saving and restoring of SceneStorage on your behalf. The underlying data that backs SceneStorage is not available to you, so you must access it via the SceneStorage property wrapper. The system makes no guarantees as to when and how often the data will be persisted.
-  시스템은 사용자 대신 SceneStorage의 저장 및 복원을 관리힙니다. SceneStorage를 백업하는 기본 데이터는 사용 할 수 없으므로 SceneStorage속성 래퍼를 통해 엑세스해 야 합니다.
-  시스템은 데이터가 언제, 얼마나 자주 지속될 것인지에 대한 보장을 하지 않습니다.
-  
-  Each Scene has its own notion of SceneStorage, so data is not shared between scenes.
-각 씬(scene)에는 씬 저장에 대한 자체 개념이 있으므로 씬 간에 데이터가 고융 되지 않습니다.
-
-Ensure that the data you use with SceneStorage is lightweight. Data of a large size, such as model data, should not be stored in SceneStorage, as poor performance may result.
-
-SceneStorage와 함께 사용하는 데이터가 경량인지 확인합니다. 모델 데이터와 같이 큰 데이터는 성능이 저하될 수 있으므로 SceneStorage에 저장하면 안됩니다.
-
-If the Scene is explicitly destroyed (e.g. the switcher snapshot is destroyed on iPadOS or the window is closed on macOS), the data is also destroyed. Do not use SceneStorage with sensitive data.
-
-장면이 명시적으로 파괴딘 경우 (에: iPad에서 전환기 스냅샷이 파괴된경우) MacOS에서 OS 또는 창이 닫힘. 데이터도 파괴됩니다. 중요한 데이터와 함께 SceneStorage를 사용하지 마십시오.

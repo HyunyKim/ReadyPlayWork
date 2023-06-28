@@ -14,17 +14,32 @@ struct StateView: View {
     
     var body: some View {
         VStack(spacing: 0, content: {
-            
+            HStack(spacing: 10) {
                 ZStack() {
                     Circle()
                         .fill(color1)
-                        .frame(width: 200)
+                        .frame(width: 60)
                     Text("\(number1)")
-                        .font(Font.system(size: 50))
+                        .font(Font.system(size: 20))
                         .bold()
-                        .padding(.top, 10)
                 }
-            Text("test")
+                ZStack() {
+                    Circle()
+                        .fill(.green)
+                        .frame(width: 60)
+                    Text("\(number1)")
+                        .font(Font.system(size: 20))
+                        .bold()
+                }
+                ZStack() {
+                    Circle()
+                        .fill(.blue)
+                        .frame(width: 60)
+                    Text("\(number1)")
+                        .font(Font.system(size: 20))
+                        .bold()
+                }
+            }
             Spacer().frame(height: 50)
             HStack(spacing: 50) {
                 Group {

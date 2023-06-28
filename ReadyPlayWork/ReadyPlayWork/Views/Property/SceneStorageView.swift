@@ -51,7 +51,7 @@ struct SceneStorageView: View {
         })
 //        .frame(height: 400)
         
-        .navigationTitle("State View")
+        .navigationTitle("SceneStorageView")
     }
 }
 

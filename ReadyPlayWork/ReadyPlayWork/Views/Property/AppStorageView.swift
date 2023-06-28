@@ -51,7 +51,7 @@ struct AppStorageView: View {
         })
 //        .frame(height: 400)
         
-        .navigationTitle("State View")
+        .navigationTitle("AppStorageView")
     }
 }
 
