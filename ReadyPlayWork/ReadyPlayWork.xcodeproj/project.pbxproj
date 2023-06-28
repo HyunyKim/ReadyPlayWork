@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		950714F82A45705A00AF913A /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950714F72A45705A00AF913A /* MainViewModel.swift */; };
+		950714F82A45705A00AF913A /* NavigationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950714F72A45705A00AF913A /* NavigationModel.swift */; };
 		950714FF2A458ABC00AF913A /* LineChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950714FE2A458ABC00AF913A /* LineChartView.swift */; };
 		954B82022A4AAFB200C1123E /* Study in Resources */ = {isa = PBXBuildFile; fileRef = 954B82012A4AAFB200C1123E /* Study */; };
+		954B82052A4AC80600C1123E /* SceneStorageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954B82042A4AC80600C1123E /* SceneStorageView.swift */; };
+		95936C652A4BFDC100BC0595 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95936C642A4BFDC100BC0595 /* Extension.swift */; };
+		95936C672A4C003400BC0595 /* StateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95936C662A4C003400BC0595 /* StateView.swift */; };
+		95936C692A4C286A00BC0595 /* AppStorageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95936C682A4C286A00BC0595 /* AppStorageView.swift */; };
 		95B4EBCF2A45310C00328C23 /* ReadyPlayWorkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B4EBCE2A45310C00328C23 /* ReadyPlayWorkApp.swift */; };
 		95B4EBD12A45310C00328C23 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B4EBD02A45310C00328C23 /* ContentView.swift */; };
 		95B4EBD32A45310D00328C23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95B4EBD22A45310D00328C23 /* Assets.xcassets */; };
@@ -38,9 +42,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		950714F72A45705A00AF913A /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		950714F72A45705A00AF913A /* NavigationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationModel.swift; sourceTree = "<group>"; };
 		950714FE2A458ABC00AF913A /* LineChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartView.swift; sourceTree = "<group>"; };
 		954B82012A4AAFB200C1123E /* Study */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Study; sourceTree = "<group>"; };
+		954B82042A4AC80600C1123E /* SceneStorageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneStorageView.swift; sourceTree = "<group>"; };
+		95936C642A4BFDC100BC0595 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		95936C662A4C003400BC0595 /* StateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateView.swift; sourceTree = "<group>"; };
+		95936C682A4C286A00BC0595 /* AppStorageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStorageView.swift; sourceTree = "<group>"; };
 		95B4EBCB2A45310C00328C23 /* ReadyPlayWork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReadyPlayWork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95B4EBCE2A45310C00328C23 /* ReadyPlayWorkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadyPlayWorkApp.swift; sourceTree = "<group>"; };
 		95B4EBD02A45310C00328C23 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -84,7 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				95B4EBD02A45310C00328C23 /* ContentView.swift */,
-				950714F72A45705A00AF913A /* MainViewModel.swift */,
+				950714F72A45705A00AF913A /* NavigationModel.swift */,
 			);
 			path = MainList;
 			sourceTree = "<group>";
@@ -92,26 +100,45 @@
 		950714F92A458A8E00AF913A /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				950714FA2A458A9500AF913A /* 1.Chart */,
-				950714FB2A458A9E00AF913A /* 2.Alert */,
+				954B82032A4AC7F000C1123E /* Property */,
+				950714FA2A458A9500AF913A /* Chart */,
+				950714FB2A458A9E00AF913A /* Alert */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		950714FA2A458A9500AF913A /* 1.Chart */ = {
+		950714FA2A458A9500AF913A /* Chart */ = {
 			isa = PBXGroup;
 			children = (
 				950714FE2A458ABC00AF913A /* LineChartView.swift */,
 				95F63DE82A499FC2003C78E2 /* BarChartView.swift */,
 			);
-			path = 1.Chart;
+			path = Chart;
 			sourceTree = "<group>";
 		};
-		950714FB2A458A9E00AF913A /* 2.Alert */ = {
+		950714FB2A458A9E00AF913A /* Alert */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = 2.Alert;
+			path = Alert;
+			sourceTree = "<group>";
+		};
+		954B82032A4AC7F000C1123E /* Property */ = {
+			isa = PBXGroup;
+			children = (
+				95936C662A4C003400BC0595 /* StateView.swift */,
+				954B82042A4AC80600C1123E /* SceneStorageView.swift */,
+				95936C682A4C286A00BC0595 /* AppStorageView.swift */,
+			);
+			path = Property;
+			sourceTree = "<group>";
+		};
+		95936C632A4BFDA400BC0595 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				95936C642A4BFDC100BC0595 /* Extension.swift */,
+			);
+			name = Common;
 			sourceTree = "<group>";
 		};
 		95B4EBC22A45310C00328C23 = {
@@ -138,6 +165,7 @@
 		95B4EBCD2A45310C00328C23 /* ReadyPlayWork */ = {
 			isa = PBXGroup;
 			children = (
+				95936C632A4BFDA400BC0595 /* Common */,
 				950714F92A458A8E00AF913A /* Views */,
 				950714F62A45704100AF913A /* MainList */,
 				95B4EBCE2A45310C00328C23 /* ReadyPlayWorkApp.swift */,
@@ -306,9 +334,13 @@
 			files = (
 				950714FF2A458ABC00AF913A /* LineChartView.swift in Sources */,
 				95B4EBD12A45310C00328C23 /* ContentView.swift in Sources */,
+				95936C652A4BFDC100BC0595 /* Extension.swift in Sources */,
+				95936C692A4C286A00BC0595 /* AppStorageView.swift in Sources */,
 				95F63DE92A499FC2003C78E2 /* BarChartView.swift in Sources */,
 				95B4EBCF2A45310C00328C23 /* ReadyPlayWorkApp.swift in Sources */,
-				950714F82A45705A00AF913A /* MainViewModel.swift in Sources */,
+				954B82052A4AC80600C1123E /* SceneStorageView.swift in Sources */,
+				95936C672A4C003400BC0595 /* StateView.swift in Sources */,
+				950714F82A45705A00AF913A /* NavigationModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

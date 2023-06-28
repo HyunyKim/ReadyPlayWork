@@ -8,21 +8,21 @@
 import SwiftUI
 
 struct ContentView: View {
-    var viewModel: MainViewModel = MainViewModel()
+    @StateObject var router: NavigationModel = NavigationModel()
     
-    var category: [MainViewModel.Category]  {
-        return self.viewModel.category
+    var category: [NavigationModel.Category]  {
+        return self.router.category
     }
     
-    @State private var path = [MainViewModel.SubList]()
+    @State private var path = [NavigationModel.SubList]()
     
     var body: some View {
-        NavigationStack(path: $path){
+        NavigationStack(path: $router.navPath){
             List(self.category, id: \.self) { section in
                 Section {
                     ForEach(section.list, id:\.self) { item in
                         Button {
-                            path.append(item)
+                            router.navPath.append(item)
                         } label: {
                             Label(item.title, systemImage: "circle")
                                 .foregroundColor(.gray)
@@ -35,13 +35,8 @@ struct ContentView: View {
                 }
             }
             .navigationTitle("Category")
-            .navigationDestination(for: MainViewModel.SubList.self) { item in
-                switch item {
-                case .LineChart:
-                    LineChartView()
-                default:
-                    BarChartView()
-                }
+            .navigationDestination(for: NavigationModel.SubList.self) { item in
+                item.destination
             }
         }
         
