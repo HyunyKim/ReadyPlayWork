@@ -21,6 +21,10 @@
 		95B4EBE12A45310D00328C23 /* ReadyPlayWorkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B4EBE02A45310D00328C23 /* ReadyPlayWorkTests.swift */; };
 		95B4EBEB2A45310D00328C23 /* ReadyPlayWorkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B4EBEA2A45310D00328C23 /* ReadyPlayWorkUITests.swift */; };
 		95B4EBED2A45310D00328C23 /* ReadyPlayWorkUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B4EBEC2A45310D00328C23 /* ReadyPlayWorkUITestsLaunchTests.swift */; };
+		95BA210D2A4D5B3E008F522C /* RadarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BA210B2A4D5AA2008F522C /* RadarChartView.swift */; };
+		95BA210F2A4D5F11008F522C /* TransactionRadarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BA210E2A4D5F11008F522C /* TransactionRadarChartView.swift */; };
+		95BA21122A4D5FDE008F522C /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = 95BA21112A4D5FDE008F522C /* DGCharts */; };
+		95BA21152A4D6314008F522C /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BA21142A4D6314008F522C /* Transaction.swift */; };
 		95F63DE92A499FC2003C78E2 /* BarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F63DE82A499FC2003C78E2 /* BarChartView.swift */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +64,9 @@
 		95B4EBE62A45310D00328C23 /* ReadyPlayWorkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReadyPlayWorkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		95B4EBEA2A45310D00328C23 /* ReadyPlayWorkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadyPlayWorkUITests.swift; sourceTree = "<group>"; };
 		95B4EBEC2A45310D00328C23 /* ReadyPlayWorkUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadyPlayWorkUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		95BA210B2A4D5AA2008F522C /* RadarChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadarChartView.swift; sourceTree = "<group>"; };
+		95BA210E2A4D5F11008F522C /* TransactionRadarChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRadarChartView.swift; sourceTree = "<group>"; };
+		95BA21142A4D6314008F522C /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		95F63DE82A499FC2003C78E2 /* BarChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -68,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95BA21122A4D5FDE008F522C /* DGCharts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,8 +118,11 @@
 		950714FA2A458A9500AF913A /* Chart */ = {
 			isa = PBXGroup;
 			children = (
+				95BA21132A4D62F9008F522C /* TransactionDatas */,
 				950714FE2A458ABC00AF913A /* LineChartView.swift */,
 				95F63DE82A499FC2003C78E2 /* BarChartView.swift */,
+				95BA210B2A4D5AA2008F522C /* RadarChartView.swift */,
+				95BA210E2A4D5F11008F522C /* TransactionRadarChartView.swift */,
 			);
 			path = Chart;
 			sourceTree = "<group>";
@@ -149,6 +160,7 @@
 				95B4EBDF2A45310D00328C23 /* ReadyPlayWorkTests */,
 				95B4EBE92A45310D00328C23 /* ReadyPlayWorkUITests */,
 				95B4EBCC2A45310C00328C23 /* Products */,
+				95BA21102A4D5FDE008F522C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -201,6 +213,21 @@
 			path = ReadyPlayWorkUITests;
 			sourceTree = "<group>";
 		};
+		95BA21102A4D5FDE008F522C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		95BA21132A4D62F9008F522C /* TransactionDatas */ = {
+			isa = PBXGroup;
+			children = (
+				95BA21142A4D6314008F522C /* Transaction.swift */,
+			);
+			path = TransactionDatas;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -217,6 +244,9 @@
 			dependencies = (
 			);
 			name = ReadyPlayWork;
+			packageProductDependencies = (
+				95BA21112A4D5FDE008F522C /* DGCharts */,
+			);
 			productName = ReadyPlayWork;
 			productReference = 95B4EBCB2A45310C00328C23 /* ReadyPlayWork.app */;
 			productType = "com.apple.product-type.application";
@@ -289,6 +319,9 @@
 				Base,
 			);
 			mainGroup = 95B4EBC22A45310C00328C23;
+			packageReferences = (
+				95BA210A2A4D5A46008F522C /* XCRemoteSwiftPackageReference "Charts" */,
+			);
 			productRefGroup = 95B4EBCC2A45310C00328C23 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -334,13 +367,16 @@
 			files = (
 				950714FF2A458ABC00AF913A /* LineChartView.swift in Sources */,
 				95B4EBD12A45310C00328C23 /* ContentView.swift in Sources */,
+				95BA21152A4D6314008F522C /* Transaction.swift in Sources */,
 				95936C652A4BFDC100BC0595 /* Extension.swift in Sources */,
 				95936C692A4C286A00BC0595 /* AppStorageView.swift in Sources */,
 				95F63DE92A499FC2003C78E2 /* BarChartView.swift in Sources */,
 				95B4EBCF2A45310C00328C23 /* ReadyPlayWorkApp.swift in Sources */,
 				954B82052A4AC80600C1123E /* SceneStorageView.swift in Sources */,
+				95BA210D2A4D5B3E008F522C /* RadarChartView.swift in Sources */,
 				95936C672A4C003400BC0595 /* StateView.swift in Sources */,
 				950714F82A45705A00AF913A /* NavigationModel.swift in Sources */,
+				95BA210F2A4D5F11008F522C /* TransactionRadarChartView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -492,6 +528,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = ReadyPlayWork/ReadyPlayWork.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ReadyPlayWork/Preview Content\"";
@@ -516,11 +553,15 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hyun.readyplaywork.swiftui;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,7";
 			};
 			name = Debug;
 		};
@@ -530,6 +571,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = ReadyPlayWork/ReadyPlayWork.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ReadyPlayWork/Preview Content\"";
@@ -554,11 +596,15 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hyun.readyplaywork.swiftui;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,7";
 			};
 			name = Release;
 		};
@@ -692,6 +738,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		95BA210A2A4D5A46008F522C /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		95BA21112A4D5FDE008F522C /* DGCharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 95BA210A2A4D5A46008F522C /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = DGCharts;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 95B4EBC32A45310C00328C23 /* Project object */;
 }

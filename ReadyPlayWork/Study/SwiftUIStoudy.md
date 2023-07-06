@@ -20,3 +20,18 @@ AppStorage 와 SceneStorage는 비슷하지만
    https://crystalminds.medium.com/introducing-scenestorage-in-swiftui-5a4ec1a90ca3
    
 
+
+
+# Swift Char RadarChart
+
+## Swift Open source "Chart(DGChart)" 사용. 
+
+## 기본 화면 구성을 위해서 "UIViewRepresentable" 로 "TransactionRadarChartView" 생성. 
+
+data는 기본 구성인데 옵션에 대해서 정리하려고 합니다.
+
+## Option Values 
+
+- activities: RadarChart 에 각 항목을 정해주는 값. 
+  
+

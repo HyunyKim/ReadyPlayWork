@@ -19,7 +19,7 @@ final class NavigationModel: ObservableObject {
         var list: [SubList] {
             switch self {
             case .Chart:
-                return [.LineChart, .BarChart]
+                return [.LineChart, .BarChart, .RadarChart]
             case .Component:
                 return [.Alert,.Toast]
             case .Animation:
@@ -35,6 +35,7 @@ final class NavigationModel: ObservableObject {
         case Toast
         case LineChart
         case BarChart
+        case RadarChart
         case AppStorage
         case SceneStorage
         case State
@@ -50,6 +51,8 @@ final class NavigationModel: ObservableObject {
                 return "LineChart"
             case .BarChart:
                 return "BarChart"
+            case .RadarChart:
+                return "RadarChart"
             case .AppStorage:
                 return "AppStorage"
             case .SceneStorage:
@@ -69,6 +72,8 @@ final class NavigationModel: ObservableObject {
                 SceneStorageView()
             case .LineChart:
                 LineChartView()
+            case .RadarChart:
+                RadarChartView()
             case .State:
                 StateView()
             case .BarChart:
