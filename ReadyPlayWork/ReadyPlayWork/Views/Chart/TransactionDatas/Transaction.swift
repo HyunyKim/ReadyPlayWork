@@ -59,3 +59,28 @@ struct RadarChartViewModel {
         return data
     }
 }
+
+
+struct BarChartViewModel {
+    
+    func barChartDatas() -> BarChartData {
+        let yVals = (1..<5).map { (i) -> BarChartDataEntry in
+            let mult = 40
+            let val = Double(arc4random_uniform(UInt32(mult)))
+            if arc4random_uniform(100) < 25 {
+                return BarChartDataEntry(x: Double(i), y: val, icon: UIImage.init(systemName: "PlayStation"))
+            } else {
+                return BarChartDataEntry(x: Double(i), y: val)
+            }
+        }
+        
+        let set1: BarChartDataSet = BarChartDataSet(entries: yVals, label: "The year 2017")
+        set1.colors = ChartColorTemplates.material()
+        
+        let data = BarChartData(dataSet: set1)
+        data.setValueFont(.systemFont(ofSize: 10,weight: .light))
+        data.barWidth = 0.9
+        return data
+        
+    }
+}

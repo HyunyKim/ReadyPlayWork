@@ -11,7 +11,7 @@ import SwiftUI
 final class NavigationModel: ObservableObject {
     
     enum Category: String {
-        case Chart = "Chart"
+        case Chart = "Chart-DGChart"
         case Component = "Component"
         case Animation = "Animation"
         case Property = "Peoperty"
