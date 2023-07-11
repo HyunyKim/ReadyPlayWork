@@ -9,9 +9,8 @@ import SwiftUI
 
 struct RadarChartView: View {
     var body: some View {
-        TransactionRadarChartView(viewModel: RadarChartViewModel())
-            .frame(width: 400, height: 600)
-        .navigationTitle("RadarChart")
+        
+        Text("RaderChart")
     }
 }
 

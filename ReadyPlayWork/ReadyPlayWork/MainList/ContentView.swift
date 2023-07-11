@@ -24,8 +24,14 @@ struct ContentView: View {
                         Button {
                             router.navPath.append(item)
                         } label: {
-                            Label(item.title, systemImage: "circle")
-                                .foregroundColor(.gray)
+                            GeometryReader { localGeometry in
+                                HStack(spacing: 0) {
+                                    Label(item.title, systemImage: "circle.circle")
+                                        .foregroundColor(.gray)
+                                        Spacer()
+                                }.frame(width: localGeometry.size.width,
+                                        height: localGeometry.size.height)
+                            }
                         }.buttonStyle(.borderless)
 
                     }

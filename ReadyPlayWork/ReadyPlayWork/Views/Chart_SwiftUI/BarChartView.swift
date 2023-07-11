@@ -9,7 +9,7 @@ import SwiftUI
 
 struct BarChartView: View {
     var body: some View {
-        TransactionBarChartView(viewModel: BarChartViewModel())
+        Text("BarChart")
     }
 }
 

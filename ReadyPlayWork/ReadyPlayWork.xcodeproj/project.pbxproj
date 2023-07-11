@@ -9,12 +9,15 @@
 /* Begin PBXBuildFile section */
 		950714F82A45705A00AF913A /* NavigationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950714F72A45705A00AF913A /* NavigationModel.swift */; };
 		950714FF2A458ABC00AF913A /* LineChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950714FE2A458ABC00AF913A /* LineChartView.swift */; };
+		951AF08B2A5C0FF400F62AB2 /* TransactionLineChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951AF08A2A5C0FF400F62AB2 /* TransactionLineChartView.swift */; };
+		951AF08E2A5C13B900F62AB2 /* Stock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951AF08D2A5C13B900F62AB2 /* Stock.swift */; };
 		954B82022A4AAFB200C1123E /* Study in Resources */ = {isa = PBXBuildFile; fileRef = 954B82012A4AAFB200C1123E /* Study */; };
 		954B82052A4AC80600C1123E /* SceneStorageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954B82042A4AC80600C1123E /* SceneStorageView.swift */; };
 		9576A8742A5698FE009F81AE /* TransactionBarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9576A8732A5698FE009F81AE /* TransactionBarChartView.swift */; };
 		95936C652A4BFDC100BC0595 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95936C642A4BFDC100BC0595 /* Extension.swift */; };
 		95936C672A4C003400BC0595 /* StateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95936C662A4C003400BC0595 /* StateView.swift */; };
 		95936C692A4C286A00BC0595 /* AppStorageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95936C682A4C286A00BC0595 /* AppStorageView.swift */; };
+		95ADA3A42A57FA80001F1568 /* DefaultChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ADA3A32A57FA80001F1568 /* DefaultChartView.swift */; };
 		95B4EBCF2A45310C00328C23 /* ReadyPlayWorkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B4EBCE2A45310C00328C23 /* ReadyPlayWorkApp.swift */; };
 		95B4EBD12A45310C00328C23 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B4EBD02A45310C00328C23 /* ContentView.swift */; };
 		95B4EBD32A45310D00328C23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95B4EBD22A45310D00328C23 /* Assets.xcassets */; };
@@ -49,12 +52,15 @@
 /* Begin PBXFileReference section */
 		950714F72A45705A00AF913A /* NavigationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationModel.swift; sourceTree = "<group>"; };
 		950714FE2A458ABC00AF913A /* LineChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartView.swift; sourceTree = "<group>"; };
+		951AF08A2A5C0FF400F62AB2 /* TransactionLineChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionLineChartView.swift; sourceTree = "<group>"; };
+		951AF08D2A5C13B900F62AB2 /* Stock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stock.swift; sourceTree = "<group>"; };
 		954B82012A4AAFB200C1123E /* Study */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Study; sourceTree = "<group>"; };
 		954B82042A4AC80600C1123E /* SceneStorageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneStorageView.swift; sourceTree = "<group>"; };
 		9576A8732A5698FE009F81AE /* TransactionBarChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionBarChartView.swift; sourceTree = "<group>"; };
 		95936C642A4BFDC100BC0595 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		95936C662A4C003400BC0595 /* StateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateView.swift; sourceTree = "<group>"; };
 		95936C682A4C286A00BC0595 /* AppStorageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStorageView.swift; sourceTree = "<group>"; };
+		95ADA3A32A57FA80001F1568 /* DefaultChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultChartView.swift; sourceTree = "<group>"; };
 		95B4EBCB2A45310C00328C23 /* ReadyPlayWork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReadyPlayWork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95B4EBCE2A45310C00328C23 /* ReadyPlayWorkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadyPlayWorkApp.swift; sourceTree = "<group>"; };
 		95B4EBD02A45310C00328C23 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -112,6 +118,7 @@
 			children = (
 				954B82032A4AC7F000C1123E /* Property */,
 				950714FA2A458A9500AF913A /* Chart */,
+				95ADA3A22A57F872001F1568 /* Chart_SwiftUI */,
 				950714FB2A458A9E00AF913A /* Alert */,
 			);
 			path = Views;
@@ -122,9 +129,7 @@
 			children = (
 				9576A8722A5698D1009F81AE /* UIViewRepresentable */,
 				95BA21132A4D62F9008F522C /* TransactionDatas */,
-				950714FE2A458ABC00AF913A /* LineChartView.swift */,
-				95F63DE82A499FC2003C78E2 /* BarChartView.swift */,
-				95BA210B2A4D5AA2008F522C /* RadarChartView.swift */,
+				95ADA3A32A57FA80001F1568 /* DefaultChartView.swift */,
 			);
 			path = Chart;
 			sourceTree = "<group>";
@@ -134,6 +139,14 @@
 			children = (
 			);
 			path = Alert;
+			sourceTree = "<group>";
+		};
+		951AF08C2A5C13A200F62AB2 /* ChartModels */ = {
+			isa = PBXGroup;
+			children = (
+				951AF08D2A5C13B900F62AB2 /* Stock.swift */,
+			);
+			path = ChartModels;
 			sourceTree = "<group>";
 		};
 		954B82032A4AC7F000C1123E /* Property */ = {
@@ -151,6 +164,7 @@
 			children = (
 				95BA210E2A4D5F11008F522C /* TransactionRadarChartView.swift */,
 				9576A8732A5698FE009F81AE /* TransactionBarChartView.swift */,
+				951AF08A2A5C0FF400F62AB2 /* TransactionLineChartView.swift */,
 			);
 			path = UIViewRepresentable;
 			sourceTree = "<group>";
@@ -161,6 +175,17 @@
 				95936C642A4BFDC100BC0595 /* Extension.swift */,
 			);
 			name = Common;
+			sourceTree = "<group>";
+		};
+		95ADA3A22A57F872001F1568 /* Chart_SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				951AF08C2A5C13A200F62AB2 /* ChartModels */,
+				950714FE2A458ABC00AF913A /* LineChartView.swift */,
+				95BA210B2A4D5AA2008F522C /* RadarChartView.swift */,
+				95F63DE82A499FC2003C78E2 /* BarChartView.swift */,
+			);
+			path = Chart_SwiftUI;
 			sourceTree = "<group>";
 		};
 		95B4EBC22A45310C00328C23 = {
@@ -377,13 +402,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				950714FF2A458ABC00AF913A /* LineChartView.swift in Sources */,
+				951AF08B2A5C0FF400F62AB2 /* TransactionLineChartView.swift in Sources */,
 				95B4EBD12A45310C00328C23 /* ContentView.swift in Sources */,
 				95BA21152A4D6314008F522C /* Transaction.swift in Sources */,
 				95936C652A4BFDC100BC0595 /* Extension.swift in Sources */,
 				95936C692A4C286A00BC0595 /* AppStorageView.swift in Sources */,
+				95ADA3A42A57FA80001F1568 /* DefaultChartView.swift in Sources */,
 				95F63DE92A499FC2003C78E2 /* BarChartView.swift in Sources */,
 				95B4EBCF2A45310C00328C23 /* ReadyPlayWorkApp.swift in Sources */,
 				9576A8742A5698FE009F81AE /* TransactionBarChartView.swift in Sources */,
+				951AF08E2A5C13B900F62AB2 /* Stock.swift in Sources */,
 				954B82052A4AC80600C1123E /* SceneStorageView.swift in Sources */,
 				95BA210D2A4D5B3E008F522C /* RadarChartView.swift in Sources */,
 				95936C672A4C003400BC0595 /* StateView.swift in Sources */,

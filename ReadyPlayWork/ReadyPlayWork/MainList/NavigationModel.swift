@@ -15,11 +15,14 @@ final class NavigationModel: ObservableObject {
         case Component = "Component"
         case Animation = "Animation"
         case Property = "Peoperty"
+        case Chart_SwiftUI = "Chart-SwiftUI"
         
         var list: [SubList] {
             switch self {
             case .Chart:
                 return [.LineChart, .BarChart, .RadarChart]
+            case .Chart_SwiftUI:
+                return [.LineChart_SW, .BarChart_SW, .RadarChart_SW]
             case .Component:
                 return [.Alert,.Toast]
             case .Animation:
@@ -34,8 +37,11 @@ final class NavigationModel: ObservableObject {
         case Alert
         case Toast
         case LineChart
+        case LineChart_SW
         case BarChart
+        case BarChart_SW
         case RadarChart
+        case RadarChart_SW
         case AppStorage
         case SceneStorage
         case State
@@ -47,11 +53,11 @@ final class NavigationModel: ObservableObject {
                 return "Alert"
             case .Toast:
                 return "Toast"
-            case .LineChart:
+            case .LineChart, .LineChart_SW:
                 return "LineChart"
-            case .BarChart:
+            case .BarChart, .BarChart_SW:
                 return "BarChart"
-            case .RadarChart:
+            case .RadarChart, .RadarChart_SW:
                 return "RadarChart"
             case .AppStorage:
                 return "AppStorage"
@@ -70,18 +76,20 @@ final class NavigationModel: ObservableObject {
                 AppStorageView()
             case .SceneStorage:
                 SceneStorageView()
-            case .LineChart:
-                LineChartView()
-            case .RadarChart:
+            case .LineChart_SW:
+                LineChartView(value: true)
+            case .LineChart, .BarChart, .RadarChart:
+                DefaultChartView(destination: self)
+            case .RadarChart_SW:
                 RadarChartView()
+            case .BarChart_SW:
+                BarChartView()
             case .State:
                 StateView()
-            case .BarChart:
-                BarChartView()
             case .Alert:
-                LineChartView()
+                LineChartView(value: true)
             case .Toast:
-                LineChartView()
+                LineChartView(value: false)
 
             }
         }
@@ -89,6 +97,6 @@ final class NavigationModel: ObservableObject {
         
     }
     
-    let category: [Category] = [.Property, .Chart, .Component, .Animation]
+    let category: [Category] = [.Property, .Chart, .Chart_SwiftUI, .Component, .Animation]
     @Published var navPath: NavigationPath = .init()
 }
