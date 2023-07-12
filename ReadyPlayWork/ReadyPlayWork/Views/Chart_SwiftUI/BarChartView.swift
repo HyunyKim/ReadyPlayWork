@@ -6,15 +6,95 @@
 //
 
 import SwiftUI
+import Charts
 
 struct BarChartView: View {
+    
+    enum BarChartType {
+        case SingleBar
+        case DoubleBar
+    }
+    
+    var data: [Stock] = []
+    
+    @State var chartType: BarChartType = .SingleBar
+    
+    @State var scale = 1.0
+    @State var lastScale = 1.0
+    
+    var magnification: some Gesture {
+        MagnificationGesture()
+            .onChanged { state in
+                let delta = state / lastScale
+                scale *= delta
+                lastScale = state
+            }
+            .onEnded { state in
+                lastScale = 1.0
+                if state < 1 {
+                    scale = 1.0
+                }
+                print("Scale - \(scale)")
+            }
+    }
+    
     var body: some View {
-        Text("BarChart")
+        GeometryReader { geometry in
+            VStack(spacing: 20) {
+                HStack(spacing: 20) {
+                    Spacer()
+                    Button {
+                        chartType = .SingleBar
+                    } label: {
+                        Text("Single Bar")
+                            .foregroundColor(chartType == .SingleBar ? .blue : .gray)
+                    }
+                    .tint(chartType == .SingleBar ? .purple : .secondary)
+                    .buttonStyle(.bordered)
+                    Button {
+                        chartType = .DoubleBar
+                    } label: {
+                        Text("Duble Bar")
+                            .foregroundColor(chartType == .DoubleBar ? .blue : .gray)
+                    }
+                    .tint(chartType == .DoubleBar ? .purple : .secondary)
+                    .buttonStyle(.bordered)
+                    Spacer().frame(width:0)
+                }
+                ScrollView(.horizontal) {
+                    if chartType == .SingleBar {
+                        singleChart(geometry: geometry)
+                    }else {
+                        doubleBarChart(geometry: geometry)
+                    }
+       
+                }
+            }
+            .frame(width: geometry.size.width)
+        }
+    }
+    
+    private func singleChart(geometry: GeometryProxy) -> some View {
+        Chart(data,id:\.date) { stock in
+            Plot {
+                BarMark(
+                    x: .value("Day", stock.date),
+                    y: .value("Price", stock.price),
+                    width: 30
+                )
+            }.foregroundStyle(.red)
+        }
+        .gesture(magnification)
+        .frame(width: (scale > 1 ? (1 + (scale * 0.2)) : 1) * geometry.size.width)
+    }
+    
+    private func doubleBarChart(geometry: GeometryProxy) -> some View {
+        Text("이거 만들어야 하는디...")
     }
 }
 
 struct BarChartView_Previews: PreviewProvider {
     static var previews: some View {
-        BarChartView()
+        BarChartView(data: Stock.sampleData(isSmall: true))
     }
 }

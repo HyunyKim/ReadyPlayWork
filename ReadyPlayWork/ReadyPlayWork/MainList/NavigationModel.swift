@@ -77,19 +77,19 @@ final class NavigationModel: ObservableObject {
             case .SceneStorage:
                 SceneStorageView()
             case .LineChart_SW:
-                LineChartView(value: true)
+                LineChartView(data: Stock.sampleData())
             case .LineChart, .BarChart, .RadarChart:
                 DefaultChartView(destination: self)
             case .RadarChart_SW:
                 RadarChartView()
             case .BarChart_SW:
-                BarChartView()
+                BarChartView(data: Stock.sampleData(isSmall: true))
             case .State:
                 StateView()
             case .Alert:
-                LineChartView(value: true)
+                LineChartView(data: Stock.sampleData())
             case .Toast:
-                LineChartView(value: false)
+                LineChartView(data: Stock.sampleData())
 
             }
         }

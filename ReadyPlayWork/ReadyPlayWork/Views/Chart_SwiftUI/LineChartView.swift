@@ -35,11 +35,6 @@ struct LineChartView: View {
             
     }
     
-    init(value: Bool) {
-        for index in 0..<30 {
-            data.append(Stock(name: "S전자", date: "\(10 + index)", price: Double.random(in: 500...70000)))
-        }
-    }
     var body: some View {
         GeometryReader { geometry in
             ScrollView(.horizontal, showsIndicators: false) {
@@ -48,19 +43,17 @@ struct LineChartView: View {
                         x: .value("Date", model.date),
                         y: .value("Price", model.price)
                     )
-                    .lineStyle(StrokeStyle(lineWidth: 2))
+                    .lineStyle(StrokeStyle(lineWidth: 3))
                     .foregroundStyle(.red)
                     .interpolationMethod(.cardinal)
-                    .symbolSize(60)
+                    .symbol (Circle().strokeBorder(lineWidth: 2))
+                    .symbolSize(100)
                 }
-//                .chartXScale(domain: "2001"..."2040")
-//                .chartXScale(range: )
 //                .scaleEffect(scale)
                 .gesture(magnification)
                 
-//                .modifier(Pinchto)
 //                .frame(width: 50 * (CGFloat(data.count)))
-                .frame(width: scale * geometry.size.width)
+                .frame(width: (scale > 1 ? (1 + (scale * 0.2)) : 1) * geometry.size.width)
             }
             .frame(width: geometry.size.width)
         }
@@ -70,6 +63,6 @@ struct LineChartView: View {
 
 struct LineChartView_Previews: PreviewProvider {
     static var previews: some View {
-        LineChartView(value: false)
+        LineChartView(data: Stock.sampleData())
     }
 }
