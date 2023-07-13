@@ -16,8 +16,16 @@ struct BarChartView: View {
     }
     
     var data: [Stock] = []
+    var data2: [StockType2] = StockType2.sampleData
     
-    @State var chartType: BarChartType = .SingleBar
+    var xValueCount: CGFloat {
+        guard let stock = data2.last else {
+            return 12
+        }
+        return CGFloat(stock.data.count)
+    }
+    
+    @State var chartType: BarChartType = .DoubleBar
     
     @State var scale = 1.0
     @State var lastScale = 1.0
@@ -89,8 +97,28 @@ struct BarChartView: View {
     }
     
     private func doubleBarChart(geometry: GeometryProxy) -> some View {
-        Text("이거 만들어야 하는디...")
-    }
+        Chart(data2) { stock in
+            ForEach(stock.data, id: \.date) { info in
+                Plot {
+                    BarMark(
+                        x: .value("Date", info.date, unit: .month),
+                        y: .value("Sales", info.price),
+                        width: 13
+                    )
+                    .foregroundStyle(by: .value("name", stock.name))
+                }
+                .accessibilityLabel("\(stock.name) \(info.date.weekdayString)")
+                .accessibilityValue("\(info.price)")
+            }
+            .symbol(by: .value("Name", stock.name))
+            .interpolationMethod(.catmullRom)
+            .position(by: .value("dd", stock.name))
+//            .position(by: .value("City", showBarsStacked ? "Common" : series.city))
+        }
+        .chartLegend(.visible)
+        .chartLegend(position: .top)
+        .gesture(magnification)
+        .frame(width: (scale > 1 ? (1 + (scale * 0.2)) : 1) * (50 * xValueCount))    }
 }
 
 struct BarChartView_Previews: PreviewProvider {

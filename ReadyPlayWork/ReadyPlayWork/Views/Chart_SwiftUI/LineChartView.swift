@@ -39,6 +39,7 @@ struct LineChartView: View {
         GeometryReader { geometry in
             ScrollView(.horizontal, showsIndicators: false) {
                 Chart(data, id: \.date) { model in
+                    
                     LineMark(
                         x: .value("Date", model.date),
                         y: .value("Price", model.price)
