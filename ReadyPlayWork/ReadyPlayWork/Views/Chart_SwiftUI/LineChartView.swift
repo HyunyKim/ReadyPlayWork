@@ -58,7 +58,7 @@ struct LineChartView: View {
             }
             .frame(width: geometry.size.width)
         }
-//        .background(Color.randColor())
+        .navigationTitle("SW_LineChart")
     }
 }
 

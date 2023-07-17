@@ -80,6 +80,8 @@ struct BarChartView: View {
             }
             .frame(width: geometry.size.width)
         }
+        
+        .navigationTitle("SW_BarChart")
     }
     
     private func singleChart(geometry: GeometryProxy) -> some View {

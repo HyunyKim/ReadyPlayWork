@@ -17,6 +17,8 @@
 		95936C652A4BFDC100BC0595 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95936C642A4BFDC100BC0595 /* Extension.swift */; };
 		95936C672A4C003400BC0595 /* StateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95936C662A4C003400BC0595 /* StateView.swift */; };
 		95936C692A4C286A00BC0595 /* AppStorageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95936C682A4C286A00BC0595 /* AppStorageView.swift */; };
+		959ACFA92A5FFAAA00953DCD /* PieChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959ACFA82A5FFAAA00953DCD /* PieChartView.swift */; };
+		959ACFAB2A60014300953DCD /* TransactionPieChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959ACFAA2A60014300953DCD /* TransactionPieChartView.swift */; };
 		95ADA3A42A57FA80001F1568 /* DefaultChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ADA3A32A57FA80001F1568 /* DefaultChartView.swift */; };
 		95B31E562A5E97B800AE6DC7 /* ChartMagnificationGestureProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B31E552A5E97B800AE6DC7 /* ChartMagnificationGestureProtocol.swift */; };
 		95B4EBCF2A45310C00328C23 /* ReadyPlayWorkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B4EBCE2A45310C00328C23 /* ReadyPlayWorkApp.swift */; };
@@ -61,6 +63,8 @@
 		95936C642A4BFDC100BC0595 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		95936C662A4C003400BC0595 /* StateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateView.swift; sourceTree = "<group>"; };
 		95936C682A4C286A00BC0595 /* AppStorageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStorageView.swift; sourceTree = "<group>"; };
+		959ACFA82A5FFAAA00953DCD /* PieChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartView.swift; sourceTree = "<group>"; };
+		959ACFAA2A60014300953DCD /* TransactionPieChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionPieChartView.swift; sourceTree = "<group>"; };
 		95ADA3A32A57FA80001F1568 /* DefaultChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultChartView.swift; sourceTree = "<group>"; };
 		95B31E552A5E97B800AE6DC7 /* ChartMagnificationGestureProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartMagnificationGestureProtocol.swift; sourceTree = "<group>"; };
 		95B4EBCB2A45310C00328C23 /* ReadyPlayWork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReadyPlayWork.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -167,6 +171,7 @@
 				95BA210E2A4D5F11008F522C /* TransactionRadarChartView.swift */,
 				9576A8732A5698FE009F81AE /* TransactionBarChartView.swift */,
 				951AF08A2A5C0FF400F62AB2 /* TransactionLineChartView.swift */,
+				959ACFAA2A60014300953DCD /* TransactionPieChartView.swift */,
 			);
 			path = UIViewRepresentable;
 			sourceTree = "<group>";
@@ -187,6 +192,7 @@
 				95BA210B2A4D5AA2008F522C /* RadarChartView.swift */,
 				95F63DE82A499FC2003C78E2 /* BarChartView.swift */,
 				95B31E552A5E97B800AE6DC7 /* ChartMagnificationGestureProtocol.swift */,
+				959ACFA82A5FFAAA00953DCD /* PieChartView.swift */,
 			);
 			path = Chart_SwiftUI;
 			sourceTree = "<group>";
@@ -404,11 +410,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				959ACFA92A5FFAAA00953DCD /* PieChartView.swift in Sources */,
 				950714FF2A458ABC00AF913A /* LineChartView.swift in Sources */,
 				951AF08B2A5C0FF400F62AB2 /* TransactionLineChartView.swift in Sources */,
 				95B4EBD12A45310C00328C23 /* ContentView.swift in Sources */,
 				95BA21152A4D6314008F522C /* Transaction.swift in Sources */,
 				95936C652A4BFDC100BC0595 /* Extension.swift in Sources */,
+				959ACFAB2A60014300953DCD /* TransactionPieChartView.swift in Sources */,
 				95936C692A4C286A00BC0595 /* AppStorageView.swift in Sources */,
 				95ADA3A42A57FA80001F1568 /* DefaultChartView.swift in Sources */,
 				95F63DE92A499FC2003C78E2 /* BarChartView.swift in Sources */,

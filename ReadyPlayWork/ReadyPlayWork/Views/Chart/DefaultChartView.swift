@@ -22,6 +22,8 @@ struct DefaultChartView: View {
                     TransactionRadarChartView(viewModel: RadarChartViewModel())
                 case .LineChart:
                     TransactionLineChartView()
+                case .PieChart:
+                    TransactionPieChartView(viewModel: PieChartViewModel())
                 default:
                     TransactionLineChartView()
                 }

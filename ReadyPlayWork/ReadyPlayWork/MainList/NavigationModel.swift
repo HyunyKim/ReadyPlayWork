@@ -20,9 +20,9 @@ final class NavigationModel: ObservableObject {
         var list: [SubList] {
             switch self {
             case .Chart:
-                return [.LineChart, .BarChart, .RadarChart]
+                return [.LineChart, .BarChart, .RadarChart, .PieChart]
             case .Chart_SwiftUI:
-                return [.LineChart_SW, .BarChart_SW, .RadarChart_SW]
+                return [.LineChart_SW, .BarChart_SW, .RadarChart_SW, .PieChart_SW]
             case .Component:
                 return [.Alert,.Toast]
             case .Animation:
@@ -42,6 +42,8 @@ final class NavigationModel: ObservableObject {
         case BarChart_SW
         case RadarChart
         case RadarChart_SW
+        case PieChart
+        case PieChart_SW
         case AppStorage
         case SceneStorage
         case State
@@ -59,6 +61,8 @@ final class NavigationModel: ObservableObject {
                 return "BarChart"
             case .RadarChart, .RadarChart_SW:
                 return "RadarChart"
+            case .PieChart, .PieChart_SW:
+                return "PieChart"
             case .AppStorage:
                 return "AppStorage"
             case .SceneStorage:
@@ -78,12 +82,14 @@ final class NavigationModel: ObservableObject {
                 SceneStorageView()
             case .LineChart_SW:
                 LineChartView(data: Stock.sampleData())
-            case .LineChart, .BarChart, .RadarChart:
+            case .LineChart, .BarChart, .RadarChart, .PieChart:
                 DefaultChartView(destination: self)
             case .RadarChart_SW:
                 RadarChartView()
             case .BarChart_SW:
                 BarChartView(data: Stock.sampleData(isSmall: true))
+            case .PieChart_SW:
+                PieChartView()
             case .State:
                 StateView()
             case .Alert:
