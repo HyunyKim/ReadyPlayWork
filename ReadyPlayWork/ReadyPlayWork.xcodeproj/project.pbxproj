@@ -11,6 +11,7 @@
 		950714FF2A458ABC00AF913A /* LineChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950714FE2A458ABC00AF913A /* LineChartView.swift */; };
 		951AF08B2A5C0FF400F62AB2 /* TransactionLineChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951AF08A2A5C0FF400F62AB2 /* TransactionLineChartView.swift */; };
 		951AF08E2A5C13B900F62AB2 /* Stock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951AF08D2A5C13B900F62AB2 /* Stock.swift */; };
+		952A59542A667D930071B22B /* AlertSampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952A59532A667D930071B22B /* AlertSampleView.swift */; };
 		954B82022A4AAFB200C1123E /* Study in Resources */ = {isa = PBXBuildFile; fileRef = 954B82012A4AAFB200C1123E /* Study */; };
 		954B82052A4AC80600C1123E /* SceneStorageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954B82042A4AC80600C1123E /* SceneStorageView.swift */; };
 		9576A8742A5698FE009F81AE /* TransactionBarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9576A8732A5698FE009F81AE /* TransactionBarChartView.swift */; };
@@ -57,6 +58,7 @@
 		950714FE2A458ABC00AF913A /* LineChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartView.swift; sourceTree = "<group>"; };
 		951AF08A2A5C0FF400F62AB2 /* TransactionLineChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionLineChartView.swift; sourceTree = "<group>"; };
 		951AF08D2A5C13B900F62AB2 /* Stock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stock.swift; sourceTree = "<group>"; };
+		952A59532A667D930071B22B /* AlertSampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertSampleView.swift; sourceTree = "<group>"; };
 		954B82012A4AAFB200C1123E /* Study */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Study; sourceTree = "<group>"; };
 		954B82042A4AC80600C1123E /* SceneStorageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneStorageView.swift; sourceTree = "<group>"; };
 		9576A8732A5698FE009F81AE /* TransactionBarChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionBarChartView.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 		950714FB2A458A9E00AF913A /* Alert */ = {
 			isa = PBXGroup;
 			children = (
+				952A59532A667D930071B22B /* AlertSampleView.swift */,
 			);
 			path = Alert;
 			sourceTree = "<group>";
@@ -415,6 +418,7 @@
 				951AF08B2A5C0FF400F62AB2 /* TransactionLineChartView.swift in Sources */,
 				95B4EBD12A45310C00328C23 /* ContentView.swift in Sources */,
 				95BA21152A4D6314008F522C /* Transaction.swift in Sources */,
+				952A59542A667D930071B22B /* AlertSampleView.swift in Sources */,
 				95936C652A4BFDC100BC0595 /* Extension.swift in Sources */,
 				959ACFAB2A60014300953DCD /* TransactionPieChartView.swift in Sources */,
 				95936C692A4C286A00BC0595 /* AppStorageView.swift in Sources */,

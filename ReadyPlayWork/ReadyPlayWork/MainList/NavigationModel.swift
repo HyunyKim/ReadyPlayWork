@@ -93,7 +93,7 @@ final class NavigationModel: ObservableObject {
             case .State:
                 StateView()
             case .Alert:
-                LineChartView(data: Stock.sampleData())
+                AlertSampleView()
             case .Toast:
                 LineChartView(data: Stock.sampleData())
 
