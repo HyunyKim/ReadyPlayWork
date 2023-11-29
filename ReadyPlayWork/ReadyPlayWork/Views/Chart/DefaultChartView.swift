@@ -35,6 +35,6 @@ struct DefaultChartView: View {
 
 struct DefaultChartView_Previews: PreviewProvider {
     static var previews: some View {
-        DefaultChartView(destination: .BarChart)
+        DefaultChartView(destination: .PieChart)
     }
 }

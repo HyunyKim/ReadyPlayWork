@@ -13,7 +13,7 @@ final class NavigationModel: ObservableObject {
     enum Category: String {
         case Chart = "Chart-DGChart"
         case Component = "Component"
-        case Animation = "Animation"
+        case Utility = "Utility"
         case Property = "Peoperty"
         case Chart_SwiftUI = "Chart-SwiftUI"
         
@@ -25,7 +25,7 @@ final class NavigationModel: ObservableObject {
                 return [.LineChart_SW, .BarChart_SW, .RadarChart_SW, .PieChart_SW]
             case .Component:
                 return [.Alert,.Toast]
-            case .Animation:
+            case .Utility:
                 return []
             case .Property:
                 return [.State, .SceneStorage,.AppStorage]
@@ -47,6 +47,7 @@ final class NavigationModel: ObservableObject {
         case AppStorage
         case SceneStorage
         case State
+        case Photo
         
         var title: String {
             switch self {
@@ -69,6 +70,8 @@ final class NavigationModel: ObservableObject {
                 return "SceneStorage"
             case .State:
                 return "State"
+            case .Photo:
+                return "Photo"
             }
         }
         
@@ -95,14 +98,15 @@ final class NavigationModel: ObservableObject {
             case .Alert:
                 AlertSampleView()
             case .Toast:
+                ToastSampleView()
+            case .Photo:
                 LineChartView(data: Stock.sampleData())
-
             }
         }
         
         
     }
     
-    let category: [Category] = [.Property, .Chart, .Chart_SwiftUI, .Component, .Animation]
+    let category: [Category] = [.Property, .Chart, .Chart_SwiftUI, .Component, .Utility]
     @Published var navPath: NavigationPath = .init()
 }

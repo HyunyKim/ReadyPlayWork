@@ -33,6 +33,8 @@
 		95BA210F2A4D5F11008F522C /* TransactionRadarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BA210E2A4D5F11008F522C /* TransactionRadarChartView.swift */; };
 		95BA21122A4D5FDE008F522C /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = 95BA21112A4D5FDE008F522C /* DGCharts */; };
 		95BA21152A4D6314008F522C /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BA21142A4D6314008F522C /* Transaction.swift */; };
+		95D12CF82B171C0C00F92B86 /* ToastSampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D12CF72B171C0C00F92B86 /* ToastSampleView.swift */; };
+		95D12CFA2B1742E700F92B86 /* PhotoSampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D12CF92B1742E700F92B86 /* PhotoSampleView.swift */; };
 		95F63DE92A499FC2003C78E2 /* BarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F63DE82A499FC2003C78E2 /* BarChartView.swift */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +85,8 @@
 		95BA210B2A4D5AA2008F522C /* RadarChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadarChartView.swift; sourceTree = "<group>"; };
 		95BA210E2A4D5F11008F522C /* TransactionRadarChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRadarChartView.swift; sourceTree = "<group>"; };
 		95BA21142A4D6314008F522C /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		95D12CF72B171C0C00F92B86 /* ToastSampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastSampleView.swift; sourceTree = "<group>"; };
+		95D12CF92B1742E700F92B86 /* PhotoSampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSampleView.swift; sourceTree = "<group>"; };
 		95F63DE82A499FC2003C78E2 /* BarChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -124,10 +128,11 @@
 		950714F92A458A8E00AF913A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				95592FE62A97444000FE80A3 /* Utility */,
 				954B82032A4AC7F000C1123E /* Property */,
 				950714FA2A458A9500AF913A /* Chart */,
 				95ADA3A22A57F872001F1568 /* Chart_SwiftUI */,
-				950714FB2A458A9E00AF913A /* Alert */,
+				950714FB2A458A9E00AF913A /* Component */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -142,12 +147,13 @@
 			path = Chart;
 			sourceTree = "<group>";
 		};
-		950714FB2A458A9E00AF913A /* Alert */ = {
+		950714FB2A458A9E00AF913A /* Component */ = {
 			isa = PBXGroup;
 			children = (
 				952A59532A667D930071B22B /* AlertSampleView.swift */,
+				95D12CF72B171C0C00F92B86 /* ToastSampleView.swift */,
 			);
-			path = Alert;
+			path = Component;
 			sourceTree = "<group>";
 		};
 		951AF08C2A5C13A200F62AB2 /* ChartModels */ = {
@@ -168,13 +174,21 @@
 			path = Property;
 			sourceTree = "<group>";
 		};
+		95592FE62A97444000FE80A3 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				95D12CF92B1742E700F92B86 /* PhotoSampleView.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
 		9576A8722A5698D1009F81AE /* UIViewRepresentable */ = {
 			isa = PBXGroup;
 			children = (
 				95BA210E2A4D5F11008F522C /* TransactionRadarChartView.swift */,
+				959ACFAA2A60014300953DCD /* TransactionPieChartView.swift */,
 				9576A8732A5698FE009F81AE /* TransactionBarChartView.swift */,
 				951AF08A2A5C0FF400F62AB2 /* TransactionLineChartView.swift */,
-				959ACFAA2A60014300953DCD /* TransactionPieChartView.swift */,
 			);
 			path = UIViewRepresentable;
 			sourceTree = "<group>";
@@ -203,7 +217,6 @@
 		95B4EBC22A45310C00328C23 = {
 			isa = PBXGroup;
 			children = (
-				954B82012A4AAFB200C1123E /* Study */,
 				95B4EBCD2A45310C00328C23 /* ReadyPlayWork */,
 				95B4EBDF2A45310D00328C23 /* ReadyPlayWorkTests */,
 				95B4EBE92A45310D00328C23 /* ReadyPlayWorkUITests */,
@@ -226,6 +239,7 @@
 			isa = PBXGroup;
 			children = (
 				95936C632A4BFDA400BC0595 /* Common */,
+				954B82012A4AAFB200C1123E /* Study */,
 				950714F92A458A8E00AF913A /* Views */,
 				950714F62A45704100AF913A /* MainList */,
 				95B4EBCE2A45310C00328C23 /* ReadyPlayWorkApp.swift */,
@@ -416,6 +430,7 @@
 				959ACFA92A5FFAAA00953DCD /* PieChartView.swift in Sources */,
 				950714FF2A458ABC00AF913A /* LineChartView.swift in Sources */,
 				951AF08B2A5C0FF400F62AB2 /* TransactionLineChartView.swift in Sources */,
+				95D12CFA2B1742E700F92B86 /* PhotoSampleView.swift in Sources */,
 				95B4EBD12A45310C00328C23 /* ContentView.swift in Sources */,
 				95BA21152A4D6314008F522C /* Transaction.swift in Sources */,
 				952A59542A667D930071B22B /* AlertSampleView.swift in Sources */,
@@ -426,6 +441,7 @@
 				95F63DE92A499FC2003C78E2 /* BarChartView.swift in Sources */,
 				95B4EBCF2A45310C00328C23 /* ReadyPlayWorkApp.swift in Sources */,
 				9576A8742A5698FE009F81AE /* TransactionBarChartView.swift in Sources */,
+				95D12CF82B171C0C00F92B86 /* ToastSampleView.swift in Sources */,
 				951AF08E2A5C13B900F62AB2 /* Stock.swift in Sources */,
 				954B82052A4AC80600C1123E /* SceneStorageView.swift in Sources */,
 				95BA210D2A4D5B3E008F522C /* RadarChartView.swift in Sources */,
@@ -583,6 +599,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = ReadyPlayWork/ReadyPlayWork.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
@@ -626,6 +643,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = ReadyPlayWork/ReadyPlayWork.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
