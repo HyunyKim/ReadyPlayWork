@@ -20,26 +20,26 @@ struct ToastView: View {
         let font: Font = Font.system(size: 12)
         let position: ToastPostion = .Bottom
     }
-
+    
     var values: ToastValues = ToastValues(message: "TestMessage")
     
     var body: some View {
-//        GeometryReader(content: { geometry in
-            VStack(spacing: 0, content: {
-                if values.position == .Bottom  {
-                    Spacer()
-                }
-                Text(values.message)
-                    .font(values.font)
-                    .foregroundStyle(values.fontColor)
-                    .padding(EdgeInsets(top: 10, leading: 20, bottom: 10, trailing: 20))
-                    .background(values.bgColor.opacity(0.5))
-                    .clipShape(.rect(cornerSize: CGSize(width: 4, height: 4)))
+        //        GeometryReader(content: { geometry in
+        VStack(spacing: 0, content: {
+            if values.position == .Bottom  {
+                Spacer()
+            }
+            Text(values.message)
+                .font(values.font)
+                .foregroundStyle(values.fontColor)
+                .padding(EdgeInsets(top: 10, leading: 20, bottom: 10, trailing: 20))
+                .background(values.bgColor.opacity(0.5))
+                .clipShape(.rect(cornerSize: CGSize(width: 4, height: 4)))
             
-                if values.position == .Top {
-                    Spacer()
-                }
-            })
+            if values.position == .Top {
+                Spacer()
+            }
+        })
     }
     
     mutating func changeMessage(values: ToastValues) {
@@ -47,18 +47,68 @@ struct ToastView: View {
     }
 }
 
-struct ToastContainerView: View {
+protocol ToastMessageProtocol {
+    var toastQueue: [ToastView.ToastValues] { get set }
+    
+    mutating func messagePush(values: ToastView.ToastValues)
+    mutating func messagePop() -> ToastView.ToastValues?
+}
+
+extension ToastMessageProtocol {
+    mutating func messagePop() -> ToastView.ToastValues? {
+        guard let value = toastQueue.first else {
+            return nil
+        }
+        toastQueue.removeFirst()
+        return value
+    }
+}
+
+struct ToastContainerView: View, ToastMessageProtocol {
+    @State private var toastView = ToastView()
+    @State private var isShowToast: Bool = false
+    
+    var toastQueue: [ToastView.ToastValues] = []
+    
     var body : some View {
         VStack(spacing: 0, content: {
-            /*@START_MENU_TOKEN@*/Text("Placeholder")/*@END_MENU_TOKEN@*/
+            if isShowToast {
+                self.toastView
+            }
         })
     }
+    
+    mutating func messagePush(values: ToastView.ToastValues) {
+        self.toastQueue.append(values)
+    }
+    
+    private mutating func showToast() {
+        guard self.isShowToast == false, let values = messagePop() else {
+            return
+        }
+        self.isShowToast = true
+        
+        self.toastView.changeMessage(values: values)
+        
+        withAnimation(.easeIn) {
+            self.isShowToast = true
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {[self] in
+            withAnimation(.easeInOut) {
+                isShowToast = false
+            }
+        })
+    }
+    
+    
 }
 
 struct ToastSampleView: View {
     @Environment(\.colorScheme) var colorScheme
     @State private var showToast: Bool = false
     @State private var toastView = ToastView()
+    @State private var toastContainer = ToastContainerView()
     
     var body: some View {
         ZStack {
@@ -82,7 +132,7 @@ struct ToastSampleView: View {
             })
         }
     }
-
+    
     private func showProsess(msg: String) {
         guard showToast == false else {
             return
@@ -94,11 +144,11 @@ struct ToastSampleView: View {
         withAnimation(.easeIn) {
             self.showToast = true
         }
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
-                withAnimation(.easeInOut) {
-                    self.showToast = false
-                }
-            })
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
+            withAnimation(.easeInOut) {
+                self.showToast = false
+            }
+        })
     }
 }
 #Preview {
