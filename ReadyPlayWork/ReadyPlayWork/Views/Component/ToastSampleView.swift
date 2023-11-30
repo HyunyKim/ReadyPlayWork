@@ -13,34 +13,37 @@ struct ToastView: View {
         case Center
         case Bottom
     }
+    struct ToastValues {
+        let message: String
+        var bgColor: Color = .black
+        let fontColor: Color = .white
+        let font: Font = Font.system(size: 12)
+        let position: ToastPostion = .Bottom
+    }
 
-    var message: String
-    var font: Font?
-    var bgColor: Color = .black
-    var fontColor: Color = .white
-    var position: ToastPostion = .Bottom
+    var values: ToastValues = ToastValues(message: "TestMessage")
     
     var body: some View {
 //        GeometryReader(content: { geometry in
             VStack(spacing: 0, content: {
-                if position == .Bottom {
+                if values.position == .Bottom  {
                     Spacer()
                 }
-                Text(message)
-                    .font(font ?? Font.system(size: 12))
-                    .foregroundStyle(fontColor)
+                Text(values.message)
+                    .font(values.font)
+                    .foregroundStyle(values.fontColor)
                     .padding(EdgeInsets(top: 10, leading: 20, bottom: 10, trailing: 20))
-                    .background(bgColor.opacity(0.5))
+                    .background(values.bgColor.opacity(0.5))
                     .clipShape(.rect(cornerSize: CGSize(width: 4, height: 4)))
             
-                if position == .Top {
+                if values.position == .Top {
                     Spacer()
                 }
             })
     }
     
-    mutating func changeMessage(msg: String) {
-        self.message = msg
+    mutating func changeMessage(values: ToastValues) {
+        self.values = values
     }
 }
 
@@ -55,13 +58,13 @@ struct ToastContainerView: View {
 struct ToastSampleView: View {
     @Environment(\.colorScheme) var colorScheme
     @State private var showToast: Bool = false
-    @State private var toastView = ToastView(message: "이곳에 메세지를 자유롭게 써주세요",font: Font.system(size: 18))
+    @State private var toastView = ToastView()
     
     var body: some View {
         ZStack {
             VStack(spacing:0, content: {
                 Button(action: {
-                    self.showProsess(msg: "뭐라고 할래")
+                    self.showProsess(msg: "뭐라고 할래 좀 길게 말할까?")
                 }, label: {
                     Text("Show")
                         .frame(minWidth: 100)
@@ -84,14 +87,15 @@ struct ToastSampleView: View {
         guard showToast == false else {
             return
         }
-        self.toastView.changeMessage(msg: msg)
-        withAnimation {
-            DispatchQueue.main.async {
-                self.showToast = true
-            }
+        /// Toast UI Setting
+        let values = ToastView.ToastValues(message: msg, bgColor: colorScheme == .dark ? .white : .black)
+        self.toastView.changeMessage(values: values)
+        
+        withAnimation(.easeIn) {
+            self.showToast = true
         }
             DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
-                withAnimation {
+                withAnimation(.easeInOut) {
                     self.showToast = false
                 }
             })
