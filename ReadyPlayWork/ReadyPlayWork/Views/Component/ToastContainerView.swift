@@ -11,7 +11,16 @@ protocol ToastMessageProtocol {
     var toastQueue: [ToastView.ToastValues] { get set }
     
     func messagePush(values: ToastView.ToastValues)
-    func messagePop() -> ToastView.ToastValues?
+    func messagePop() -> Bool
+    func existMssage() -> Bool
+}
+extension ToastMessageProtocol {
+    func existMssage() -> Bool {
+        guard toastQueue.count > 0 else {
+            return false
+        }
+        return true
+    }
 }
 
 
@@ -25,13 +34,14 @@ class ToastViewModel: ObservableObject, ToastMessageProtocol{
     }
     
     @discardableResult
-    func messagePop() -> ToastView.ToastValues? {
+    func messagePop() -> Bool {
         guard let value = toastQueue.first else {
-            return nil
+            self.currentValues = nil
+            return false
         }
         self.currentValues = value
         toastQueue.removeFirst()
-        return nil
+        return true
     }
 }
 
@@ -88,7 +98,9 @@ struct ToastView: View {
         DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
             withAnimation(.easeInOut) {
                 self.viewModel.isShowToast = false
-                 
+                if self.viewModel.existMssage() {
+                    self.nextMessage()
+                }
             }
         })
     }
