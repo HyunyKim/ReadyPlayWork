@@ -17,19 +17,21 @@ protocol ToastMessageProtocol {
 
 class ToastViewModel: ObservableObject, ToastMessageProtocol{
     
+    @Published var isShowToast: Bool = false
+    @Published var currentValues: ToastView.ToastValues? = nil
     var toastQueue: [ToastView.ToastValues] = []
-    var currentValues: ToastView.ToastValues? = nil
     func messagePush(values: ToastView.ToastValues) {
         toastQueue.append(values)
     }
     
+    @discardableResult
     func messagePop() -> ToastView.ToastValues? {
         guard let value = toastQueue.first else {
             return nil
         }
         self.currentValues = value
         toastQueue.removeFirst()
-        return value
+        return nil
     }
 }
 
@@ -47,81 +49,47 @@ struct ToastView: View {
         let position: ToastPostion = .Bottom
     }
     
-    
-    var values: ToastValues
-    
-    var body: some View {
-        //        GeometryReader(content: { geometry in
-        VStack(spacing: 0, content: {
-            if values.position == .Bottom  {
-                Spacer()
-            }
-            Text(values.message)
-                .font(values.font)
-                .foregroundStyle(values.fontColor)
-                .padding(EdgeInsets(top: 10, leading: 20, bottom: 10, trailing: 20))
-                .background(values.bgColor.opacity(0.5))
-                .clipShape(.rect(cornerSize: CGSize(width: 4, height: 4)))
-            
-            if values.position == .Top {
-                Spacer()
-            }
-        })
-    }
-    
-//    func changeMessage(values: ToastValues) {
-//        self.values = values
-//        print("value - ",self.values.message,values.message)
-//    }
-}
-
-
-
-
-
-struct ToastContainerView: View {
-    
-//    private var toastView = ToastView()
-    @Binding var isShowToast: Bool
-    @State private var toastValues: ToastView.ToastValues? = nil
     @ObservedObject private var viewModel: ToastViewModel = ToastViewModel()
     
-    var body : some View {
+    var body: some View {
         VStack(spacing: 0, content: {
-//            if self.isShowToast {
-                if let values = self.viewModel.currentValues {
-                    ToastView(values: values)
+            if viewModel.isShowToast == true, let values = viewModel.currentValues{
+                if values.position == .Bottom  {
+                    Spacer()
                 }
-//            }
+                Text(values.message)
+                    .font(values.font)
+                    .foregroundStyle(values.fontColor)
+                    .padding(EdgeInsets(top: 10, leading: 20, bottom: 10, trailing: 20))
+                    .background(values.bgColor.opacity(0.5))
+                    .clipShape(.rect(cornerSize: CGSize(width: 4, height: 4)))
+                
+                if values.position == .Top {
+                    Spacer()
+                }
+            }
         })
     }
     
     func showToast(values: ToastView.ToastValues) {
         viewModel.messagePush(values: values)
-//        self.isShowToast = true
         nextMessage()
     }
     
     private func nextMessage() {
-//        guard self.isShowToast == false else {
-//            return
-//        }
-        let _ = viewModel.messagePop()
-//        self.toastValues = values
-//        self.toastView.changeMessage(values: values)
-
+        guard viewModel.isShowToast == false else {
+            return
+        }
+        viewModel.messagePop()
         withAnimation(.easeIn) {
-            self.isShowToast = true
+            self.viewModel.isShowToast = true
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
             withAnimation(.easeInOut) {
-                self.isShowToast = false
+                self.viewModel.isShowToast = false
+                 
             }
         })
     }
-}
-
-#Preview {
-    ToastContainerView(isShowToast: .constant(false))
 }

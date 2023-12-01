@@ -11,14 +11,21 @@ import SwiftUI
 
 struct ToastSampleView: View {
     @Environment(\.colorScheme) var colorScheme
-    @State private var isShowToast: Bool = false
-    @State private var toastContainer: ToastContainerView = ToastContainerView(isShowToast: .constant(false))
+    private var toastView: ToastView = ToastView()
+    @State private var updateUI: Bool = false
+    private var messageList: [String] = ["어떤 메세지를 원하십니까?",
+                                        "오늘은 어제 보다 많이 춥군요",
+                                         "하루하루가 쉽지가 않습니다",
+                                         "그래도 잘 지내시기 바랍니다",
+                                         "슬슳 칼바람도 지겨워 지네요",
+                                         "그럼 어디 랭크 게임을 해볼까요?"
+                                        ]
     
     var body: some View {
         ZStack {
             VStack(spacing:0, content: {
                 Button(action: {
-                    self.showProsess(msg: "뭐라고 할래 좀 길게 말할까?")
+                    self.showProsess(msg: messageList[Int.random(in: 0...5)])
                 }, label: {
                     Text("Show")
                         .frame(minWidth: 100)
@@ -30,20 +37,15 @@ struct ToastSampleView: View {
             })
             
             VStack(spacing: 0, content: {
-                    self.toastContainer
-                    .id(isShowToast)
+                    self.toastView
             })
-        }
-        .onAppear() {
-            self.toastContainer.isShowToast = self.isShowToast
         }
     }
     
     private func showProsess(msg: String) {
         /// Toast UI Setting
         let values = ToastView.ToastValues(message: msg, bgColor: colorScheme == .dark ? .white : .black)
-        self.toastContainer.showToast(values: values)
-        self.isShowToast = true
+        toastView.showToast(values: values)
     }
 }
 #Preview {
