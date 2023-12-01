@@ -7,108 +7,12 @@
 
 import SwiftUI
 
-struct ToastView: View {
-    enum ToastPostion {
-        case Top
-        case Center
-        case Bottom
-    }
-    struct ToastValues {
-        let message: String
-        var bgColor: Color = .black
-        let fontColor: Color = .white
-        let font: Font = Font.system(size: 12)
-        let position: ToastPostion = .Bottom
-    }
-    
-    var values: ToastValues = ToastValues(message: "TestMessage")
-    
-    var body: some View {
-        //        GeometryReader(content: { geometry in
-        VStack(spacing: 0, content: {
-            if values.position == .Bottom  {
-                Spacer()
-            }
-            Text(values.message)
-                .font(values.font)
-                .foregroundStyle(values.fontColor)
-                .padding(EdgeInsets(top: 10, leading: 20, bottom: 10, trailing: 20))
-                .background(values.bgColor.opacity(0.5))
-                .clipShape(.rect(cornerSize: CGSize(width: 4, height: 4)))
-            
-            if values.position == .Top {
-                Spacer()
-            }
-        })
-    }
-    
-    mutating func changeMessage(values: ToastValues) {
-        self.values = values
-    }
-}
 
-protocol ToastMessageProtocol {
-    var toastQueue: [ToastView.ToastValues] { get set }
-    
-    mutating func messagePush(values: ToastView.ToastValues)
-    mutating func messagePop() -> ToastView.ToastValues?
-}
-
-extension ToastMessageProtocol {
-    mutating func messagePop() -> ToastView.ToastValues? {
-        guard let value = toastQueue.first else {
-            return nil
-        }
-        toastQueue.removeFirst()
-        return value
-    }
-}
-
-struct ToastContainerView: View, ToastMessageProtocol {
-    @State private var toastView = ToastView()
-    @State private var isShowToast: Bool = false
-    
-    var toastQueue: [ToastView.ToastValues] = []
-    
-    var body : some View {
-        VStack(spacing: 0, content: {
-            if isShowToast {
-                self.toastView
-            }
-        })
-    }
-    
-    mutating func messagePush(values: ToastView.ToastValues) {
-        self.toastQueue.append(values)
-    }
-    
-    private mutating func showToast() {
-        guard self.isShowToast == false, let values = messagePop() else {
-            return
-        }
-        self.isShowToast = true
-        
-        self.toastView.changeMessage(values: values)
-        
-        withAnimation(.easeIn) {
-            self.isShowToast = true
-        }
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {[self] in
-            withAnimation(.easeInOut) {
-                isShowToast = false
-            }
-        })
-    }
-    
-    
-}
 
 struct ToastSampleView: View {
     @Environment(\.colorScheme) var colorScheme
-    @State private var showToast: Bool = false
-    @State private var toastView = ToastView()
-    @State private var toastContainer = ToastContainerView()
+    @State private var isShowToast: Bool = false
+    @State private var toastContainer: ToastContainerView = ToastContainerView(isShowToast: .constant(false))
     
     var body: some View {
         ZStack {
@@ -126,29 +30,20 @@ struct ToastSampleView: View {
             })
             
             VStack(spacing: 0, content: {
-                if showToast {
-                    self.toastView
-                }
+                    self.toastContainer
+                    .id(isShowToast)
             })
+        }
+        .onAppear() {
+            self.toastContainer.isShowToast = self.isShowToast
         }
     }
     
     private func showProsess(msg: String) {
-        guard showToast == false else {
-            return
-        }
         /// Toast UI Setting
         let values = ToastView.ToastValues(message: msg, bgColor: colorScheme == .dark ? .white : .black)
-        self.toastView.changeMessage(values: values)
-        
-        withAnimation(.easeIn) {
-            self.showToast = true
-        }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
-            withAnimation(.easeInOut) {
-                self.showToast = false
-            }
-        })
+        self.toastContainer.showToast(values: values)
+        self.isShowToast = true
     }
 }
 #Preview {
