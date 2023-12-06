@@ -29,7 +29,7 @@ class ToastViewModel: ObservableObject, ToastMessageProtocol{
     @Published var isShowToast: Bool = false
     @Published var currentValues: ToastView.ToastValues? = nil
     
-    private var timer: Timer? = nil
+    private var workItem: DispatchWorkItem? = nil
     var toastQueue: [ToastView.ToastValues] = []
     func messagePush(values: ToastView.ToastValues) {
         toastQueue.append(values)
@@ -47,14 +47,18 @@ class ToastViewModel: ObservableObject, ToastMessageProtocol{
         withAnimation(.easeIn) {
             self.isShowToast = true
         }
-        timer = Timer.scheduledTimer(withTimeInterval: 3, repeats: false, block: { _ in
+        
+        workItem?.cancel()
+        workItem = DispatchWorkItem {
             withAnimation(.easeOut) {
                 self.isShowToast = false
             }
             if self.existMssage() {
                 self.messagePop()
             }
-        })
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: workItem!)
         return true
     }
 }
@@ -79,10 +83,7 @@ struct ToastView: View {
         let position: ToastPostion = .Bottom
     }
     
-    
     private let displayType: DisplayType = .Sequence
-    
-    @State private var timer: Timer? = nil
     @ObservedObject private var viewModel: ToastViewModel = ToastViewModel()
     
     var body: some View {
@@ -107,10 +108,8 @@ struct ToastView: View {
     func showToast(values: ToastView.ToastValues) {
         viewModel.messagePush(values: values)
         nextMessage()
-        }
-    
+    }
 
-    
     private func nextMessage() {
         if displayType == .Sequence {
             guard  viewModel.isShowToast == false else {
