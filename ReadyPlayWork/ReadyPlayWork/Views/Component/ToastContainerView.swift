@@ -28,6 +28,8 @@ class ToastViewModel: ObservableObject, ToastMessageProtocol{
     
     @Published var isShowToast: Bool = false
     @Published var currentValues: ToastView.ToastValues? = nil
+    
+    private var timer: Timer? = nil
     var toastQueue: [ToastView.ToastValues] = []
     func messagePush(values: ToastView.ToastValues) {
         toastQueue.append(values)
@@ -41,6 +43,18 @@ class ToastViewModel: ObservableObject, ToastMessageProtocol{
         }
         self.currentValues = value
         toastQueue.removeFirst()
+        
+        withAnimation(.easeIn) {
+            self.isShowToast = true
+        }
+        timer = Timer.scheduledTimer(withTimeInterval: 3, repeats: false, block: { _ in
+            withAnimation(.easeOut) {
+                self.isShowToast = false
+            }
+            if self.existMssage() {
+                self.messagePop()
+            }
+        })
         return true
     }
 }
@@ -51,6 +65,12 @@ struct ToastView: View {
         case Center
         case Bottom
     }
+    
+    enum DisplayType {
+        case Sequence
+        case RightAway
+    }
+    
     struct ToastValues {
         var message: String
         var bgColor: Color = .black
@@ -59,11 +79,15 @@ struct ToastView: View {
         let position: ToastPostion = .Bottom
     }
     
+    
+    private let displayType: DisplayType = .Sequence
+    
+    @State private var timer: Timer? = nil
     @ObservedObject private var viewModel: ToastViewModel = ToastViewModel()
     
     var body: some View {
         VStack(spacing: 0, content: {
-            if viewModel.isShowToast == true, let values = viewModel.currentValues{
+            if viewModel.isShowToast == true, let values = viewModel.currentValues {
                 if values.position == .Bottom  {
                     Spacer()
                 }
@@ -73,7 +97,6 @@ struct ToastView: View {
                     .padding(EdgeInsets(top: 10, leading: 20, bottom: 10, trailing: 20))
                     .background(values.bgColor.opacity(0.5))
                     .clipShape(.rect(cornerSize: CGSize(width: 4, height: 4)))
-                
                 if values.position == .Top {
                     Spacer()
                 }
@@ -84,24 +107,18 @@ struct ToastView: View {
     func showToast(values: ToastView.ToastValues) {
         viewModel.messagePush(values: values)
         nextMessage()
-    }
+        }
+    
+
     
     private func nextMessage() {
-        guard viewModel.isShowToast == false else {
-            return
+        if displayType == .Sequence {
+            guard  viewModel.isShowToast == false else {
+                return
+            }
+        } else {
+            self.viewModel.isShowToast = false
         }
         viewModel.messagePop()
-        withAnimation(.easeIn) {
-            self.viewModel.isShowToast = true
-        }
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
-            withAnimation(.easeInOut) {
-                self.viewModel.isShowToast = false
-                if self.viewModel.existMssage() {
-                    self.nextMessage()
-                }
-            }
-        })
     }
 }
