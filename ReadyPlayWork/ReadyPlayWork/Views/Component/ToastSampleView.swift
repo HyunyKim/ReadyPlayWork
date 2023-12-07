@@ -11,6 +11,8 @@ import SwiftUI
 
 struct ToastSampleView: View {
     @Environment(\.colorScheme) var colorScheme
+    
+    @State private var showAnimation: Bool = false
     private var toastView: ToastView = ToastView(displayType: .RightAway)
     private var messageList: [String] = ["테스트 메세지",
                                          "Test Message ",
@@ -23,7 +25,7 @@ struct ToastSampleView: View {
     
     var body: some View {
         ZStack {
-            VStack(spacing:0, content: {
+            VStack(spacing:20, content: {
                 Button(action: {
                     self.showProsess(msg: messageList[Int.random(in: 0...5)])
                 }, label: {
@@ -34,6 +36,12 @@ struct ToastSampleView: View {
                         .clipShape(.rect(cornerRadii: RectangleCornerRadii(topLeading: 8,bottomLeading: 8, bottomTrailing: 8, topTrailing: 8)))
                 })
                 .buttonStyle(.plain)
+                
+                Toggle("Animation On",isOn: $showAnimation)
+                    .frame(width: 200)
+                    .padding(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5))
+                    .background(.gray)
+                    .clipShape(.rect(cornerRadii: RectangleCornerRadii(topLeading: 8,bottomLeading: 8, bottomTrailing: 8, topTrailing: 8)))
             })
             
             VStack(spacing: 0, content: {
@@ -44,7 +52,7 @@ struct ToastSampleView: View {
     
     private func showProsess(msg: String) {
         /// Toast UI Setting
-        let values = ToastView.ToastValues(message: msg, bgColor: colorScheme == .dark ? .white : .black)
+        let values = ToastView.ToastValues(message: msg, bgColor: colorScheme == .dark ? .white : .black, showAnimation: showAnimation)
         toastView.showToast(values: values)
     }
 }

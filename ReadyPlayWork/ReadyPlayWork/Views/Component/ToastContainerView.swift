@@ -90,7 +90,7 @@ struct ToastView: View {
         let fontColor: Color = .white
         let font: Font = Font.system(size: 12)
         let position: ToastPostion = .Bottom
-        let showAnimation: Bool = false
+        var showAnimation: Bool = false
     }
     /// Toast Display Type ( Sequence / Right Away)
     let displayType: DisplayType
