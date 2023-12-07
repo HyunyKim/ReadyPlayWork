@@ -11,15 +11,14 @@ import SwiftUI
 
 struct ToastSampleView: View {
     @Environment(\.colorScheme) var colorScheme
-    private var toastView: ToastView = ToastView()
-    @State private var updateUI: Bool = false
-    private var messageList: [String] = ["어떤 메세지를 원하십니까?",
-                                         "오늘은 어제 보다 많이 춥군요",
-                                         "하루하루가 쉽지가 않습니다",
-                                         "그래도 잘 지내시기 바랍니다",
-                                         "슬슳 칼바람도 지겨워 지네요",
-                                         "그럼 어디 랭크 게임을 해볼까요?",
-                                         "긴 메세지를 어떻게 보여주나요.\n 보여줘 봅시다."
+    private var toastView: ToastView = ToastView(displayType: .RightAway)
+    private var messageList: [String] = ["테스트 메세지",
+                                         "Test Message ",
+                                         "긴 메세지 테스트를 합니다.\n 두줄로 표시됩니다.",
+                                         "배경색도 원하는데로 바꿔 보세요",
+                                         "다른 곳에서도 이걸 활용해서 보여주세요",
+                                         "전체에 적용되도록 만들고 싶었습니다",
+                                         "다른 프로젝트에서 적용해서 사용해보겠습니다\n연속된 메시지\n순차적 메세지\n"
     ]
     
     var body: some View {

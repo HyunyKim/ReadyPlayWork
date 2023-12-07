@@ -44,11 +44,18 @@ class ToastViewModel: ObservableObject, ToastMessageProtocol{
         self.currentValues = value
         toastQueue.removeFirst()
         
-        withAnimation(.easeIn) {
+        if value.showAnimation {
+            withAnimation(.easeIn) {
+                self.isShowToast = true
+            }
+        }else {
             self.isShowToast = true
         }
-        
-        workItem?.cancel()
+
+        if workItem != nil {
+            workItem?.cancel()
+            workItem = nil
+        }
         workItem = DispatchWorkItem {
             withAnimation(.easeOut) {
                 self.isShowToast = false
@@ -71,7 +78,9 @@ struct ToastView: View {
     }
     
     enum DisplayType {
+        /// 메세지 순차적으로 보여줌.
         case Sequence
+        /// 최신 메세지만 표시함.
         case RightAway
     }
     
@@ -81,9 +90,10 @@ struct ToastView: View {
         let fontColor: Color = .white
         let font: Font = Font.system(size: 12)
         let position: ToastPostion = .Bottom
+        let showAnimation: Bool = false
     }
-    
-    private let displayType: DisplayType = .Sequence
+    /// Toast Display Type ( Sequence / Right Away)
+    let displayType: DisplayType
     @ObservedObject private var viewModel: ToastViewModel = ToastViewModel()
     
     var body: some View {

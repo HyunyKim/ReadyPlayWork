@@ -152,6 +152,7 @@
 		950714FB2A458A9E00AF913A /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				956BF2C12B218084007C0267 /* Toast */,
 				952A59532A667D930071B22B /* AlertSampleView.swift */,
 				95D12CF72B171C0C00F92B86 /* ToastSampleView.swift */,
 				95D7C57E2B188BFA00375EFB /* ToastContainerView.swift */,
@@ -183,6 +184,13 @@
 				95D12CF92B1742E700F92B86 /* PhotoSampleView.swift */,
 			);
 			path = Utility;
+			sourceTree = "<group>";
+		};
+		956BF2C12B218084007C0267 /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Toast;
 			sourceTree = "<group>";
 		};
 		9576A8722A5698D1009F81AE /* UIViewRepresentable */ = {
