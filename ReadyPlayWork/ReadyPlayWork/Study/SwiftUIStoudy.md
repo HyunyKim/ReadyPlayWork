@@ -35,3 +35,10 @@ data는 기본 구성인데 옵션에 대해서 정리하려고 합니다.
 - activities: RadarChart 에 각 항목을 정해주는 값. 
   
 
+
+# ToastContainerView 
+## 여타의 프로젝트에 바로 적용가능한 ToastView를 만듬. 
+
+# Photo Picker
+## PhotosPicker 를 이용한 이미지 접근을 한다. 
+## Transferable 에 대한 정의를 공부 한다. 

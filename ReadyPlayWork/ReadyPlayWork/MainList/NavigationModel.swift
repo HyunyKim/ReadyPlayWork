@@ -24,7 +24,7 @@ final class NavigationModel: ObservableObject {
             case .Chart_SwiftUI:
                 return [.LineChart_SW, .BarChart_SW, .RadarChart_SW, .PieChart_SW]
             case .Component:
-                return [.Alert,.Toast]
+                return [.Alert, .Toast, .PhotoPicker]
             case .Utility:
                 return []
             case .Property:
@@ -47,7 +47,7 @@ final class NavigationModel: ObservableObject {
         case AppStorage
         case SceneStorage
         case State
-        case Photo
+        case PhotoPicker
         
         var title: String {
             switch self {
@@ -70,8 +70,8 @@ final class NavigationModel: ObservableObject {
                 return "SceneStorage"
             case .State:
                 return "State"
-            case .Photo:
-                return "Photo"
+            case .PhotoPicker:
+                return "PhotoPicker"
             }
         }
         
@@ -99,8 +99,8 @@ final class NavigationModel: ObservableObject {
                 AlertSampleView()
             case .Toast:
                 ToastSampleView()
-            case .Photo:
-                LineChartView(data: Stock.sampleData())
+            case .PhotoPicker:
+                PhotosPickerSampleView()
             }
         }
         
