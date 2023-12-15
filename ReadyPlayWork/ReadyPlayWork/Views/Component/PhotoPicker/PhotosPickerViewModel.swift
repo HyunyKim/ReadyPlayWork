@@ -8,6 +8,7 @@
 import SwiftUI
 import CoreTransferable
 import PhotosUI
+import Photos
 
 @MainActor
 final class PhotosPickerViewModel: ObservableObject {
@@ -25,8 +26,7 @@ final class PhotosPickerViewModel: ObservableObject {
     struct LoadedImage: Transferable {
         let image: Image
         
-        static
-        var transferRepresentation: some TransferRepresentation {
+        static var transferRepresentation: some TransferRepresentation {
             DataRepresentation(importedContentType: .image) { data in
                 guard let uiImage = UIImage(data: data) else {
                     throw TransferError.importFiled
@@ -49,6 +49,12 @@ final class PhotosPickerViewModel: ObservableObject {
             }
         }
     }
+    @Published var imageSelections: [PhotosPickerItem] = [] {
+        didSet {
+             self.loadImages()
+        }
+    }
+    @Published var selctedImages: [Image] = []
     
     
     private func loadTransferable(from imageSelection: PhotosPickerItem) -> Progress {
@@ -67,6 +73,60 @@ final class PhotosPickerViewModel: ObservableObject {
                     self.imageState = .failure(error)
                 }
             }
+        }
+    }
+    
+    private func loadImages()  {
+        imageSelections.forEach { item in
+            item.loadTransferable(type: Data.self) { result in
+                switch result {
+                case .success(let imgData):
+                    if let data = imgData , let uiImage = UIImage(data: data) {
+                        self.selctedImages.append(Image(uiImage: uiImage))
+                    }
+                case .failure(let error):
+                    print("Load Fail",error)
+                }
+            }
+        }
+    }
+    
+    @discardableResult
+    public func checkAuthorization() -> Bool {
+        let status = PHPhotoLibrary.authorizationStatus(for: .readWrite)
+        
+        var str: String = "sdf"
+        let test: [String]
+        str.components
+        let value = str.map({$0 == "a" ? $0.uppercased() : $0.lowercased()}).joined()
+        str.hasSuffix(<#T##suffix: String##String#>)
+        let subString = str.dropLast()
+        str.components(separatedBy: " ")
+        str.dropLast()
+        switch status {
+        case .notDetermined:
+            PHPhotoLibrary.requestAuthorization(for: .readWrite) { newStatus in
+                if newStatus == .authorized {
+                    print("Access granted")
+                } else {
+                    print("Access denied")
+                }
+            }
+            return false
+        case .restricted, .denied:
+            print("Access denied or restricted")
+            return false
+            
+        case .authorized:
+            print("Access already granted.")
+            return true
+        case .limited:
+            print("Access limited.")
+            return true
+            
+        @unknown default:
+            print("Unknown ahturization status.")
+            return false
         }
     }
     

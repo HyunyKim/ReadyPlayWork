@@ -52,7 +52,6 @@ struct ProfileImage: View {
 struct PhotosPickerSampleView: View {
     
     @StateObject var viewModel = PhotosPickerViewModel()
-    
     var body: some View {
         VStack( spacing: 50, content: {
             Spacer().frame(height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
@@ -67,9 +66,30 @@ struct PhotosPickerSampleView: View {
                             .foregroundColor(.accentColor)
                     }
                 })
-            Text("Image를 선택해 주세요.")
-                .padding()
-                .background(RoundedRectangle(cornerRadius: 8).fill(.gray))
+            Button {
+                
+                viewModel.checkAuthorization()
+            } label: {
+                Text("Photo Library Permission Check")
+                    .padding()
+                    .background(RoundedRectangle(cornerRadius: 8).fill(.gray))
+            }.buttonStyle(.plain)
+            
+            PhotosPicker(selection: $viewModel.imageSelections) {
+                Text("PhotosPicker - MultiSelect")
+                    .padding()
+                    .background(RoundedRectangle(cornerRadius: 8).fill(.gray))
+            }.buttonStyle(.plain)
+            
+            ScrollView(.horizontal) {
+                HStack(spacing: 10, content: {
+                    ForEach(Array(viewModel.selctedImages.enumerated()), id:\.offset) { values in
+                        values.element
+                            .resizable()
+                            .frame(width: 100,height: 100)
+                    }
+                })
+            }
             Spacer()
         })
     }
