@@ -95,14 +95,6 @@ final class PhotosPickerViewModel: ObservableObject {
     public func checkAuthorization() -> Bool {
         let status = PHPhotoLibrary.authorizationStatus(for: .readWrite)
         
-        var str: String = "sdf"
-        let test: [String]
-        str.components
-        let value = str.map({$0 == "a" ? $0.uppercased() : $0.lowercased()}).joined()
-        str.hasSuffix(<#T##suffix: String##String#>)
-        let subString = str.dropLast()
-        str.components(separatedBy: " ")
-        str.dropLast()
         switch status {
         case .notDetermined:
             PHPhotoLibrary.requestAuthorization(for: .readWrite) { newStatus in
