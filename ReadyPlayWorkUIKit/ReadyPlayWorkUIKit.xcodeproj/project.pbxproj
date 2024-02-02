@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5316F7302B6CD33D0038A7BB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5316F72F2B6CD33D0038A7BB /* MainViewController.swift */; };
 		951C8A7B2A73D59A006579D0 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951C8A7A2A73D59A006579D0 /* MainViewModel.swift */; };
 		9599998F2A4533CA00E8A7F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9599998E2A4533CA00E8A7F1 /* AppDelegate.swift */; };
 		959999912A4533CA00E8A7F1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959999902A4533CA00E8A7F1 /* SceneDelegate.swift */; };
-		959999932A4533CA00E8A7F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959999922A4533CA00E8A7F1 /* ViewController.swift */; };
 		959999962A4533CA00E8A7F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 959999942A4533CA00E8A7F1 /* Main.storyboard */; };
 		959999982A4533CB00E8A7F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 959999972A4533CB00E8A7F1 /* Assets.xcassets */; };
 		9599999B2A4533CB00E8A7F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 959999992A4533CB00E8A7F1 /* LaunchScreen.storyboard */; };
@@ -37,11 +37,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5316F72F2B6CD33D0038A7BB /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		951C8A7A2A73D59A006579D0 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		9599998B2A4533CA00E8A7F1 /* ReadyPlayWorkUIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReadyPlayWorkUIKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9599998E2A4533CA00E8A7F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		959999902A4533CA00E8A7F1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		959999922A4533CA00E8A7F1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		959999952A4533CA00E8A7F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		959999972A4533CB00E8A7F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9599999A2A4533CB00E8A7F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -78,11 +78,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5316F72C2B6CD15D0038A7BB /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				951C8A7A2A73D59A006579D0 /* MainViewModel.swift */,
+				5316F72F2B6CD33D0038A7BB /* MainViewController.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
 		951C8A792A73D57C006579D0 /* MainView */ = {
 			isa = PBXGroup;
 			children = (
-				959999922A4533CA00E8A7F1 /* ViewController.swift */,
-				951C8A7A2A73D59A006579D0 /* MainViewModel.swift */,
 			);
 			path = MainView;
 			sourceTree = "<group>";
@@ -110,6 +117,7 @@
 		9599998D2A4533CA00E8A7F1 /* ReadyPlayWorkUIKit */ = {
 			isa = PBXGroup;
 			children = (
+				5316F72C2B6CD15D0038A7BB /* Scenes */,
 				951C8A792A73D57C006579D0 /* MainView */,
 				9599998E2A4533CA00E8A7F1 /* AppDelegate.swift */,
 				959999902A4533CA00E8A7F1 /* SceneDelegate.swift */,
@@ -148,6 +156,7 @@
 				959999872A4533CA00E8A7F1 /* Sources */,
 				959999882A4533CA00E8A7F1 /* Frameworks */,
 				959999892A4533CA00E8A7F1 /* Resources */,
+				5316F7312B6CD3C40038A7BB /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -264,15 +273,36 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5316F7312B6CD3C40038A7BB /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		959999872A4533CA00E8A7F1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				959999932A4533CA00E8A7F1 /* ViewController.swift in Sources */,
 				9599998F2A4533CA00E8A7F1 /* AppDelegate.swift in Sources */,
 				959999912A4533CA00E8A7F1 /* SceneDelegate.swift in Sources */,
 				951C8A7B2A73D59A006579D0 /* MainViewModel.swift in Sources */,
+				5316F7302B6CD33D0038A7BB /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,6 +486,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = ZP2DUBL9ML;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ReadyPlayWorkUIKit/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -489,6 +520,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = ZP2DUBL9ML;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ReadyPlayWorkUIKit/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
