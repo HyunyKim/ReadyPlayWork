@@ -27,7 +27,7 @@ struct PieChartView: View {
                 var pieContext = context
                 pieContext.rotate(by: .degrees(-90))
                 let radius = min(size.width, size.height) * 0.45
-                let gapSize = Angle(degrees: 5) // size of the gap between slices in degrees
+//                let gapSize = Angle(degrees: 5) // size of the gap between slices in degrees
                 
                 var startAngle = Angle.zero + Angle(degrees: 0)
                 for stock in data {

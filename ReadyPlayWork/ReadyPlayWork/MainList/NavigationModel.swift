@@ -28,7 +28,7 @@ final class NavigationModel: ObservableObject {
             case .Utility:
                 return []
             case .Property:
-                return [.State, .SceneStorage,.AppStorage]
+                return [.PropertySample, .SceneStorage,.AppStorage]
             }
         }
     }
@@ -46,7 +46,7 @@ final class NavigationModel: ObservableObject {
         case PieChart_SW
         case AppStorage
         case SceneStorage
-        case State
+        case PropertySample
         case PhotoPicker
         
         var title: String {
@@ -68,8 +68,8 @@ final class NavigationModel: ObservableObject {
                 return "AppStorage"
             case .SceneStorage:
                 return "SceneStorage"
-            case .State:
-                return "State"
+            case .PropertySample:
+                return "PropertySample"
             case .PhotoPicker:
                 return "PhotoPicker"
             }
@@ -93,8 +93,8 @@ final class NavigationModel: ObservableObject {
                 BarChartView(data: Stock.sampleData(isSmall: true))
             case .PieChart_SW:
                 PieChartView()
-            case .State:
-                StateView()
+            case .PropertySample:
+                PropertySampleView()
             case .Alert:
                 AlertSampleView()
             case .Toast:
