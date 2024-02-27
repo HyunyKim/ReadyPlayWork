@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		53E677662B8DD68000D412FF /* ToastModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E677652B8DD68000D412FF /* ToastModifier.swift */; };
 		950714F82A45705A00AF913A /* NavigationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950714F72A45705A00AF913A /* NavigationModel.swift */; };
 		950714FF2A458ABC00AF913A /* LineChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950714FE2A458ABC00AF913A /* LineChartView.swift */; };
 		951AF08B2A5C0FF400F62AB2 /* TransactionLineChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951AF08A2A5C0FF400F62AB2 /* TransactionLineChartView.swift */; };
@@ -59,6 +60,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		53E677652B8DD68000D412FF /* ToastModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastModifier.swift; sourceTree = "<group>"; };
 		950714F72A45705A00AF913A /* NavigationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationModel.swift; sourceTree = "<group>"; };
 		950714FE2A458ABC00AF913A /* LineChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartView.swift; sourceTree = "<group>"; };
 		951AF08A2A5C0FF400F62AB2 /* TransactionLineChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionLineChartView.swift; sourceTree = "<group>"; };
@@ -123,6 +125,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		53E677642B8DD65400D412FF /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+				95D12CF72B171C0C00F92B86 /* ToastSampleView.swift */,
+				95D7C57E2B188BFA00375EFB /* ToastContainerView.swift */,
+				53E677652B8DD68000D412FF /* ToastModifier.swift */,
+			);
+			path = Toast;
+			sourceTree = "<group>";
+		};
 		950714F62A45704100AF913A /* MainList */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,11 +169,9 @@
 		950714FB2A458A9E00AF913A /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				53E677642B8DD65400D412FF /* Toast */,
 				956BF2C42B21C59D007C0267 /* PhotoPicker */,
-				956BF2C12B218084007C0267 /* Toast */,
 				952A59532A667D930071B22B /* AlertSampleView.swift */,
-				95D12CF72B171C0C00F92B86 /* ToastSampleView.swift */,
-				95D7C57E2B188BFA00375EFB /* ToastContainerView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -190,13 +200,6 @@
 				95D12CF92B1742E700F92B86 /* PhotoSampleView.swift */,
 			);
 			path = Utility;
-			sourceTree = "<group>";
-		};
-		956BF2C12B218084007C0267 /* Toast */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Toast;
 			sourceTree = "<group>";
 		};
 		956BF2C42B21C59D007C0267 /* PhotoPicker */ = {
@@ -476,6 +479,7 @@
 				956BF2C62B21C5B1007C0267 /* PhotosPickerSampleView.swift in Sources */,
 				956BF2C82B21DE8C007C0267 /* PhotosPickerViewModel.swift in Sources */,
 				95936C672A4C003400BC0595 /* PropertySampleView.swift in Sources */,
+				53E677662B8DD68000D412FF /* ToastModifier.swift in Sources */,
 				950714F82A45705A00AF913A /* NavigationModel.swift in Sources */,
 				95BA210F2A4D5F11008F522C /* TransactionRadarChartView.swift in Sources */,
 				95B31E562A5E97B800AE6DC7 /* ChartMagnificationGestureProtocol.swift in Sources */,
