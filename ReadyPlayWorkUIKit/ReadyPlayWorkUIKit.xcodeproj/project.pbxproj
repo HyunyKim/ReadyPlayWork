@@ -7,11 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5316F7302B6CD33D0038A7BB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5316F72F2B6CD33D0038A7BB /* MainViewController.swift */; };
+		5316F7392B6CDEC30038A7BB /* MainListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5316F7382B6CDEC30038A7BB /* MainListCell.swift */; };
+		5316F79B2B6CE2D20038A7BB /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5316F79A2B6CE21A0038A7BB /* Extensions.swift */; };
+		5316F79E2B6CF5C10038A7BB /* SceneRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5316F79D2B6CF5C10038A7BB /* SceneRouter.swift */; };
+		5316F7A02B6CF65C0038A7BB /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5316F79F2B6CF65C0038A7BB /* BaseViewController.swift */; };
+		5316F7A22B6CF78E0038A7BB /* MainListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5316F7A12B6CF78E0038A7BB /* MainListCell.xib */; };
+		5316F7B02B6D03370038A7BB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5316F7AE2B6D03370038A7BB /* MainViewController.swift */; };
+		5316F7B12B6D03370038A7BB /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5316F7AF2B6D03370038A7BB /* MainViewController.xib */; };
+		53823A792B6D41CE00DDC087 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 53823A782B6D41CE00DDC087 /* .swiftlint.yml */; };
+		53C167FA2B6D3E6700B2231C /* LevelOSLog in Frameworks */ = {isa = PBXBuildFile; productRef = 53C167F92B6D3E6700B2231C /* LevelOSLog */; };
 		951C8A7B2A73D59A006579D0 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951C8A7A2A73D59A006579D0 /* MainViewModel.swift */; };
 		9599998F2A4533CA00E8A7F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9599998E2A4533CA00E8A7F1 /* AppDelegate.swift */; };
 		959999912A4533CA00E8A7F1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959999902A4533CA00E8A7F1 /* SceneDelegate.swift */; };
-		959999962A4533CA00E8A7F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 959999942A4533CA00E8A7F1 /* Main.storyboard */; };
 		959999982A4533CB00E8A7F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 959999972A4533CB00E8A7F1 /* Assets.xcassets */; };
 		9599999B2A4533CB00E8A7F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 959999992A4533CB00E8A7F1 /* LaunchScreen.storyboard */; };
 		959999A62A4533CB00E8A7F1 /* ReadyPlayWorkUIKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959999A52A4533CB00E8A7F1 /* ReadyPlayWorkUIKitTests.swift */; };
@@ -37,12 +44,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5316F72F2B6CD33D0038A7BB /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		5316F7382B6CDEC30038A7BB /* MainListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListCell.swift; sourceTree = "<group>"; };
+		5316F7982B6CE0CC0038A7BB /* Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; path = Helper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5316F79A2B6CE21A0038A7BB /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = ../Helper/Helper/Extensions.swift; sourceTree = "<group>"; };
+		5316F79D2B6CF5C10038A7BB /* SceneRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneRouter.swift; sourceTree = "<group>"; };
+		5316F79F2B6CF65C0038A7BB /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		5316F7A12B6CF78E0038A7BB /* MainListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainListCell.xib; sourceTree = "<group>"; };
+		5316F7AE2B6D03370038A7BB /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		5316F7AF2B6D03370038A7BB /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		53823A782B6D41CE00DDC087 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		951C8A7A2A73D59A006579D0 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		9599998B2A4533CA00E8A7F1 /* ReadyPlayWorkUIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReadyPlayWorkUIKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9599998E2A4533CA00E8A7F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		959999902A4533CA00E8A7F1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		959999952A4533CA00E8A7F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		959999972A4533CB00E8A7F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9599999A2A4533CB00E8A7F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9599999C2A4533CB00E8A7F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -58,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53C167FA2B6D3E6700B2231C /* LevelOSLog in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,26 +96,60 @@
 		5316F72C2B6CD15D0038A7BB /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				951C8A7A2A73D59A006579D0 /* MainViewModel.swift */,
-				5316F72F2B6CD33D0038A7BB /* MainViewController.swift */,
+				5316F7322B6CD8D00038A7BB /* MainList */,
+				5316F79F2B6CF65C0038A7BB /* BaseViewController.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
 		};
-		951C8A792A73D57C006579D0 /* MainView */ = {
+		5316F7322B6CD8D00038A7BB /* MainList */ = {
 			isa = PBXGroup;
 			children = (
+				5316F7332B6CD8DB0038A7BB /* ListCell */,
+				951C8A7A2A73D59A006579D0 /* MainViewModel.swift */,
+				5316F7AE2B6D03370038A7BB /* MainViewController.swift */,
+				5316F7AF2B6D03370038A7BB /* MainViewController.xib */,
 			);
-			path = MainView;
+			path = MainList;
+			sourceTree = "<group>";
+		};
+		5316F7332B6CD8DB0038A7BB /* ListCell */ = {
+			isa = PBXGroup;
+			children = (
+				5316F7382B6CDEC30038A7BB /* MainListCell.swift */,
+				5316F7A12B6CF78E0038A7BB /* MainListCell.xib */,
+			);
+			path = ListCell;
+			sourceTree = "<group>";
+		};
+		5316F7972B6CE0CC0038A7BB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5316F79A2B6CE21A0038A7BB /* Extensions.swift */,
+				5316F7982B6CE0CC0038A7BB /* Helper.app */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5316F79C2B6CF5830038A7BB /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				9599998E2A4533CA00E8A7F1 /* AppDelegate.swift */,
+				959999902A4533CA00E8A7F1 /* SceneDelegate.swift */,
+				5316F79D2B6CF5C10038A7BB /* SceneRouter.swift */,
+			);
+			path = Application;
 			sourceTree = "<group>";
 		};
 		959999822A4533CA00E8A7F1 = {
 			isa = PBXGroup;
 			children = (
+				53823A782B6D41CE00DDC087 /* .swiftlint.yml */,
 				9599998D2A4533CA00E8A7F1 /* ReadyPlayWorkUIKit */,
 				959999A42A4533CB00E8A7F1 /* ReadyPlayWorkUIKitTests */,
 				959999AE2A4533CB00E8A7F1 /* ReadyPlayWorkUIKitUITests */,
 				9599998C2A4533CA00E8A7F1 /* Products */,
+				5316F7972B6CE0CC0038A7BB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -117,11 +166,8 @@
 		9599998D2A4533CA00E8A7F1 /* ReadyPlayWorkUIKit */ = {
 			isa = PBXGroup;
 			children = (
+				5316F79C2B6CF5830038A7BB /* Application */,
 				5316F72C2B6CD15D0038A7BB /* Scenes */,
-				951C8A792A73D57C006579D0 /* MainView */,
-				9599998E2A4533CA00E8A7F1 /* AppDelegate.swift */,
-				959999902A4533CA00E8A7F1 /* SceneDelegate.swift */,
-				959999942A4533CA00E8A7F1 /* Main.storyboard */,
 				959999972A4533CB00E8A7F1 /* Assets.xcassets */,
 				959999992A4533CB00E8A7F1 /* LaunchScreen.storyboard */,
 				9599999C2A4533CB00E8A7F1 /* Info.plist */,
@@ -156,13 +202,16 @@
 				959999872A4533CA00E8A7F1 /* Sources */,
 				959999882A4533CA00E8A7F1 /* Frameworks */,
 				959999892A4533CA00E8A7F1 /* Resources */,
-				5316F7312B6CD3C40038A7BB /* ShellScript */,
+				535B06B92B6D0AB600808750 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = ReadyPlayWorkUIKit;
+			packageProductDependencies = (
+				53C167F92B6D3E6700B2231C /* LevelOSLog */,
+			);
 			productName = ReadyPlayWorkUIKit;
 			productReference = 9599998B2A4533CA00E8A7F1 /* ReadyPlayWorkUIKit.app */;
 			productType = "com.apple.product-type.application";
@@ -235,6 +284,9 @@
 				Base,
 			);
 			mainGroup = 959999822A4533CA00E8A7F1;
+			packageReferences = (
+				53C167F82B6D3E6700B2231C /* XCRemoteSwiftPackageReference "LevelOSLog" */,
+			);
 			productRefGroup = 9599998C2A4533CA00E8A7F1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -251,9 +303,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53823A792B6D41CE00DDC087 /* .swiftlint.yml in Resources */,
 				9599999B2A4533CB00E8A7F1 /* LaunchScreen.storyboard in Resources */,
 				959999982A4533CB00E8A7F1 /* Assets.xcassets in Resources */,
-				959999962A4533CA00E8A7F1 /* Main.storyboard in Resources */,
+				5316F7A22B6CF78E0038A7BB /* MainListCell.xib in Resources */,
+				5316F7B12B6D03370038A7BB /* MainViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,7 +328,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5316F7312B6CD3C40038A7BB /* ShellScript */ = {
+		535B06B92B6D0AB600808750 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
@@ -290,7 +344,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "\nif [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -299,10 +353,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5316F79B2B6CE2D20038A7BB /* Extensions.swift in Sources */,
 				9599998F2A4533CA00E8A7F1 /* AppDelegate.swift in Sources */,
 				959999912A4533CA00E8A7F1 /* SceneDelegate.swift in Sources */,
 				951C8A7B2A73D59A006579D0 /* MainViewModel.swift in Sources */,
-				5316F7302B6CD33D0038A7BB /* MainViewController.swift in Sources */,
+				5316F79E2B6CF5C10038A7BB /* SceneRouter.swift in Sources */,
+				5316F7A02B6CF65C0038A7BB /* BaseViewController.swift in Sources */,
+				5316F7392B6CDEC30038A7BB /* MainListCell.swift in Sources */,
+				5316F7B02B6D03370038A7BB /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,14 +397,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		959999942A4533CA00E8A7F1 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				959999952A4533CA00E8A7F1 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		959999992A4533CB00E8A7F1 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -489,9 +539,10 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ReadyPlayWorkUIKit/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -523,9 +574,10 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ReadyPlayWorkUIKit/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -660,6 +712,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		53C167F82B6D3E6700B2231C /* XCRemoteSwiftPackageReference "LevelOSLog" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/HyunyKim/LevelOSLog.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		53C167F92B6D3E6700B2231C /* LevelOSLog */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 53C167F82B6D3E6700B2231C /* XCRemoteSwiftPackageReference "LevelOSLog" */;
+			productName = LevelOSLog;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 959999832A4533CA00E8A7F1 /* Project object */;
 }

@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Helper/Helper.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:ReadyPlayWork/ReadyPlayWork.xcodeproj">
    </FileRef>
    <FileRef

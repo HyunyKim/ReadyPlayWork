@@ -17,7 +17,7 @@ struct RadarChartViewModel {
     func radarChartDatas() -> RadarChartData {
         let mult: UInt32 = 200
         let min: UInt32 = 0
-        let cnt = 5
+//        let cnt = 5
         
         let block: (Int) -> RadarChartDataEntry = { _ in return RadarChartDataEntry(value: Double(arc4random_uniform(mult) + min))}
 //        let entries1 = (0..<cnt).map(block)

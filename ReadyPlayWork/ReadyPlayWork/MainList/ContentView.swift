@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var router: NavigationModel = NavigationModel()
+    @EnvironmentObject var router: NavigationModel
     
     var category: [NavigationModel.Category]  {
         return self.router.category
@@ -52,5 +52,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environmentObject(NavigationModel())
     }
 }
